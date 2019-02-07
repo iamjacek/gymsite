@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  min-height: 718px;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.section-home {
+  margin: 0;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(#5C5C5C -80%, #000);
+  overflow: hidden;
+}
+.section-home__star {
+  position: absolute;
+  bottom: -40%;
+  right: 0;
+  width: calc(75% + 100px);
+  z-index: 0;
+}
+.section-home__nav {
+  position: relative;
+  height: 12%;
+  width: 75%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-home__logo {
+  position: relative;
+  width: 230px;
+}
+.section-home__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-home__menu a {
+  margin: 2.5vw;
+  color: #FFF;
+  font-size: 1.2em;
+  background: none;
+  padding: 10px;
+  text-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+.section-home__content {
+  height: 88%;
+  width: 75%;
+  margin: 0 auto;
+  padding: 0;
+  z-index: 2;
+  position: relative;
+  font-family: "Pavanam";
+}
+.section-home__content h1 {
+  font-family: "Pavanam";
+  font-size: 10em;
+  color: #FFF;
+  line-height: 110pt;
+  z-index: 5;
+  margin-top: 8vh;
+}
+.section-home__man-picture {
+  position: absolute;
+  bottom: 35vh;
+  right: 13%;
+  width: 35%;
+}
+.section-home__content-text {
+  font-family: "PaytoneOne", serif;
+  color: #FFF;
+  width: 45%;
+  margin-top: 15vh;
+}
+.section-home__button {
+  color: #FFF;
+  background: #CF8349;
+  padding: 10px 25px;
+  margin-top: 3vh;
+  border: none;
+  border-radius: 3px;
+}
+.section-home__scroll {
+  position: absolute;
+  bottom: 3vh;
+  left: calc(50% - 30px);
+}
+
+.section-about {
+  background: #CF8349;
+}
