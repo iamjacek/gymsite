@@ -256,6 +256,7 @@ var _os = require("os");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import backgroundTrainers from '../assets/background_trainers.svg'
 //images HOME SECTION
 var i = document.getElementsByClassName('section-home__star');
 var c = document.createElement('img');
@@ -285,7 +286,10 @@ var secAbout = document.getElementsByClassName('section-about');
 var imgHead = document.createElement('img');
 imgHead.src = _heading_about.default;
 imgHead.alt = "heading picture";
-imgHead.className = 'section-about__heading'; //text content for about sec
+imgHead.className = 'section-about__heading'; // //images trainers SECTION
+// const secTrainers = document.getElementsByClassName('section-trainers')
+// secTrainers[0].style.backgroundImage = `url(${backgroundTrainers})`;
+//text content for about sec
 
 var parCont = document.createElement('p');
 parCont.className = "section-about__container";
@@ -329,7 +333,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61446" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36607" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

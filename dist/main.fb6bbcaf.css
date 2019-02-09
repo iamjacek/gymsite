@@ -7,7 +7,7 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
-  min-height: 718px; }
+  min-height: 768px; }
 
 .section {
   position: relative;
@@ -208,9 +208,31 @@ html, body {
   overflow: hidden; }
   .section-trainers h1 {
     color: #FFF;
-    font-size: 5rem;
+    font-size: 5.2rem;
     text-align: center;
-    margin: 5%; }
+    margin: 60px 0 10px 0; }
+  .section-trainers__paragraph {
+    font-size: 1.4rem;
+    color: #FFF;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto; }
+  .section-trainers__pictures-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    -webkit-box-shadow: 0 -200px 200px -200px #5C5C5C;
+            box-shadow: 0 -200px 200px -200px #5C5C5C;
+    border-radius: 50%; }
+  .section-trainers__picture {
+    margin: -3px;
+    padding: 0;
+    width: 25%; }
 
 @media only screen and (max-height: 800px) {
   .section-home__content h1 {
@@ -218,7 +240,7 @@ html, body {
   .section-home__content-text {
     margin-top: 10vh; } }
 
-@media only screen and (max-width: 1315px) {
+@media only screen and (max-width: 1500px) {
   .section-home__menu a {
     margin: 1.5vw; }
   .section-home__content h1 {
@@ -231,4 +253,18 @@ html, body {
 
 @media only screen and (max-width: 1200px) {
   .section-about__navigation-wheel {
-    display: none; } }
+    display: none; }
+  .section-about__heading {
+    margin-top: 7vh; } }
+
+@media only screen and (max-width: 1399px) {
+  .section-trainers h1 {
+    font-size: 4rem;
+    margin: 140px 0 50px 0; }
+  .section-trainers__paragraph {
+    font-size: 1rem; } }
+
+@media only screen and (max-width: 799px) {
+  .section-trainers h1 {
+    font-size: 3rem;
+    margin: 5%; } }

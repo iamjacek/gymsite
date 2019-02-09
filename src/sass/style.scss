@@ -20,7 +20,7 @@ html,body {
     padding: 0;
     height: 100%;
     width: 100%;
-    min-height: 718px; //need to change on tablet and mobile
+    min-height: 768px;
 }
 
 .section {
@@ -250,12 +250,37 @@ html,body {
     overflow: hidden;
     h1{
         color: $color-6;
-        font-size: 5rem;
+        font-size: 5.2rem;
         text-align: center;
-        margin: 5%;
+        margin: 60px 0 10px 0;
+    }
+    &__paragraph {
+      font-size: 1.4rem;
+      color: $color-6;
+      text-align: center;
+      width: 50%;
+      margin: 0 auto;
+    }
+    &__pictures-container {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      max-width: 1500px;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      box-shadow: 0 -200px 200px -200px $color-2;
+      border-radius: 50%;
+    }
+    &__picture {
+      margin: -3px;
+      padding: 0;
+      width: 25%;
     }
 }
 
+//EXTRA QUERIES <--------------------------
 //home section on height to fit content
 @media only screen and (max-height: 800px) {
     .section-home {
@@ -270,7 +295,7 @@ html,body {
     }
 }
 //home section on width
-@media only screen and (max-width: 1315px) {
+@media only screen and (max-width: 1500px) {
     .section-home {
         &__menu {
             a {
@@ -292,9 +317,36 @@ html,body {
 }
 
 //navigation wheel on about section
-
 @media only screen and (max-width: 1200px) {
-    .section-about__navigation-wheel {
-        display: none;
+    .section-about {
+      &__navigation-wheel {
+          display: none;
+      }
+      &__heading {
+        margin-top: 7vh;
+      }
     }
+
+}
+
+//STANDARD QUERIES <--------------------------
+@media only screen and (max-width: 1399px) {
+  .section-trainers {
+      h1{
+          font-size: 4rem;
+          margin: 140px 0 50px 0;
+      }
+      &__paragraph {
+        font-size: 1rem;
+      }
+  }
+}
+
+@media only screen and (max-width: 799px) {
+  .section-trainers {
+      h1{
+          font-size: 3rem;
+          margin: 5%;
+      }
+  }
 }

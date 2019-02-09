@@ -4,6 +4,7 @@ import star from '../assets/star_home.svg'
 import man from '../assets/man_home.png'
 import scroll from '../assets/chevron_home.svg'
 import headingAbout from '../assets/heading_about.png'
+// import backgroundTrainers from '../assets/background_trainers.svg'
 import { homedir } from 'os';
 
 
@@ -46,6 +47,11 @@ imgHead.src = headingAbout
 imgHead.alt = "heading picture"
 imgHead.className = 'section-about__heading'
 
+// //images trainers SECTION
+// const secTrainers = document.getElementsByClassName('section-trainers')
+// secTrainers[0].style.backgroundImage = `url(${backgroundTrainers})`;
+
+
 
 
 //text content for about sec
@@ -68,5 +74,3 @@ aboutContainer.appendChild(imgHead)
 aboutContainer.appendChild(parCont)
 
 secAbout[0].appendChild(aboutContainer)
-
-
