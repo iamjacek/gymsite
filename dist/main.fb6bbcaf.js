@@ -176,7 +176,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../assets/Vector_about.svg":[["Vector_about.30452af3.svg","assets/Vector_about.svg"],"assets/Vector_about.svg"],"./../assets/Vector2_about.svg":[["Vector2_about.43002d8a.svg","assets/Vector2_about.svg"],"assets/Vector2_about.svg"],"./../assets/half-circle_about.svg":[["half-circle_about.28f2ab62.svg","assets/half-circle_about.svg"],"assets/half-circle_about.svg"],"./../assets/ellipse-grey_about.png":[["ellipse-grey_about.18b53ff2.png","assets/ellipse-grey_about.png"],"assets/ellipse-grey_about.png"],"./../assets/ellipse-orange_about.png":[["ellipse-orange_about.9bc21254.png","assets/ellipse-orange_about.png"],"assets/ellipse-orange_about.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/logo_home.png":[function(require,module,exports) {
+},{"./../assets/Vector_about.svg":[["Vector_about.30452af3.svg","assets/Vector_about.svg"],"assets/Vector_about.svg"],"./../assets/Vector2_about.svg":[["Vector2_about.43002d8a.svg","assets/Vector2_about.svg"],"assets/Vector2_about.svg"],"./../assets/half-circle_about.svg":[["half-circle_about.28f2ab62.svg","assets/half-circle_about.svg"],"assets/half-circle_about.svg"],"./../assets/ellipse-grey_about.png":[["ellipse-grey_about.18b53ff2.png","assets/ellipse-grey_about.png"],"assets/ellipse-grey_about.png"],"./../assets/ellipse-orange_about.png":[["ellipse-orange_about.9bc21254.png","assets/ellipse-orange_about.png"],"assets/ellipse-orange_about.png"],"./../assets/dot_prices.png":[["dot_prices.6c197969.png","assets/dot_prices.png"],"assets/dot_prices.png"],"./../assets/vector_prices.svg":[["vector_prices.be3f7a7b.svg","assets/vector_prices.svg"],"assets/vector_prices.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/logo_home.png":[function(require,module,exports) {
 module.exports = "/logo_home.07ed628a.png";
 },{}],"assets/star_home.svg":[function(require,module,exports) {
 module.exports = "/star_home.b575be31.svg";
@@ -186,6 +186,10 @@ module.exports = "/man_home.0c6dc632.png";
 module.exports = "/chevron_home.56ec1954.svg";
 },{}],"assets/heading_about.png":[function(require,module,exports) {
 module.exports = "/heading_about.11a8b692.png";
+},{}],"assets/fonts/Pavanam.ttf":[function(require,module,exports) {
+module.exports = "/Pavanam.7f676f72.ttf";
+},{}],"assets/fonts/PaytoneOne.ttf":[function(require,module,exports) {
+module.exports = "/PaytoneOne.b89b6053.ttf";
 },{}],"../node_modules/os-browserify/browser.js":[function(require,module,exports) {
 exports.endianness = function () { return 'LE' };
 
@@ -252,61 +256,79 @@ var _chevron_home = _interopRequireDefault(require("../assets/chevron_home.svg")
 
 var _heading_about = _interopRequireDefault(require("../assets/heading_about.png"));
 
+var _Pavanam = _interopRequireDefault(require("../assets/fonts/Pavanam.ttf"));
+
+var _PaytoneOne = _interopRequireDefault(require("../assets/fonts/PaytoneOne.ttf"));
+
 var _os = require("os");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import backgroundTrainers from '../assets/background_trainers.svg'
-//images HOME SECTION
-var i = document.getElementsByClassName('section-home__star');
-var c = document.createElement('img');
+//fonts
+var newStyle = document.createElement("style");
+newStyle.appendChild(document.createTextNode("\
+@font-face {\
+    font-family: " + "Pavanam" + ";\
+    src: url('" + _Pavanam.default + "') format('truetype');\
+}\
+"));
+newStyle.appendChild(document.createTextNode("\
+  @font-face {\
+      font-family: " + "PaytoneOne" + ";\
+      src: url('" + _PaytoneOne.default + "') format('truetype');\
+  }\
+  "));
+document.head.appendChild(newStyle); //images HOME SECTION
+
+var i = document.getElementsByClassName("section-home__star");
+var c = document.createElement("img");
 c.src = _star_home.default;
-c.alt = 'start background image';
-c.className = 'section-home__star';
+c.alt = "start background image";
+c.className = "section-home__star";
 i[0].appendChild(c);
-var b = document.createElement('img');
+var b = document.createElement("img");
 b.src = _man_home.default;
-b.alt = 'athlete picture';
-b.className = 'section-home__man-picture';
+b.alt = "athlete picture";
+b.className = "section-home__man-picture";
 i[0].appendChild(b);
-var h = document.getElementsByClassName('section-home__nav');
-var a = document.createElement('img');
+var h = document.getElementsByClassName("section-home__nav");
+var a = document.createElement("img");
 a.src = _logo_home.default;
-a.alt = 'logo';
-a.className = 'section-home__logo';
+a.alt = "logo";
+a.className = "section-home__logo";
 h[0].insertBefore(a, h[0].childNodes[0]);
-var homeSection = document.getElementsByClassName('section-home');
-var scrollHomePageInd = document.createElement('img');
+var homeSection = document.getElementsByClassName("section-home");
+var scrollHomePageInd = document.createElement("img");
 scrollHomePageInd.src = _chevron_home.default;
-scrollHomePageInd.alt = 'scroll arrow';
-scrollHomePageInd.className = 'section-home__scroll';
+scrollHomePageInd.alt = "scroll arrow";
+scrollHomePageInd.className = "section-home__scroll";
 homeSection[0].appendChild(scrollHomePageInd); // images ABOUT SEC
 
-var secAbout = document.getElementsByClassName('section-about');
-var imgHead = document.createElement('img');
+var secAbout = document.getElementsByClassName("section-about");
+var imgHead = document.createElement("img");
 imgHead.src = _heading_about.default;
 imgHead.alt = "heading picture";
-imgHead.className = 'section-about__heading'; // //images trainers SECTION
+imgHead.className = "section-about__heading"; // //images trainers SECTION
 // const secTrainers = document.getElementsByClassName('section-trainers')
 // secTrainers[0].style.backgroundImage = `url(${backgroundTrainers})`;
 //text content for about sec
 
-var parCont = document.createElement('p');
+var parCont = document.createElement("p");
 parCont.className = "section-about__container";
-var par = document.createElement('p');
-par.innerHTML = "\"What? Do you not know that your body is the temple of the Holy Spirit, who is in you, whom you have received from God, and that you are not your own? You were bought with a price. Therefore glorify God in your body and in your spirit, which are God's.\" ";
+var par = document.createElement("p");
+par.innerHTML = '"What? Do you not know that your body is the temple of the Holy Spirit, who is in you, whom you have received from God, and that you are not your own? You were bought with a price. Therefore glorify God in your body and in your spirit, which are God\'s." ';
 par.className = "section-about__paragraph";
 parCont.appendChild(par);
-var subText = document.createElement('p');
+var subText = document.createElement("p");
 subText.innerHTML = "– 1 Corinthians 6:19-20 (MEV)";
 subText.className = "section-about__subtext";
 parCont.appendChild(subText);
-var aboutContainer = document.createElement('div');
+var aboutContainer = document.createElement("div");
 aboutContainer.className = "section-about__about-container";
 aboutContainer.appendChild(imgHead);
 aboutContainer.appendChild(parCont);
 secAbout[0].appendChild(aboutContainer);
-},{"../sass/style.scss":"sass/style.scss","../assets/logo_home.png":"assets/logo_home.png","../assets/star_home.svg":"assets/star_home.svg","../assets/man_home.png":"assets/man_home.png","../assets/chevron_home.svg":"assets/chevron_home.svg","../assets/heading_about.png":"assets/heading_about.png","os":"../node_modules/os-browserify/browser.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../sass/style.scss":"sass/style.scss","../assets/logo_home.png":"assets/logo_home.png","../assets/star_home.svg":"assets/star_home.svg","../assets/man_home.png":"assets/man_home.png","../assets/chevron_home.svg":"assets/chevron_home.svg","../assets/heading_about.png":"assets/heading_about.png","../assets/fonts/Pavanam.ttf":"assets/fonts/Pavanam.ttf","../assets/fonts/PaytoneOne.ttf":"assets/fonts/PaytoneOne.ttf","os":"../node_modules/os-browserify/browser.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -333,7 +355,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36607" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64205" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

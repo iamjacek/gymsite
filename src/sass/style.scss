@@ -1,352 +1,467 @@
 $color-1: #000; //font
-$color-2: #5C5C5C;
-$color-3: #CF8349;
-$color-4: #0E0E0E; //trainers section
+$color-2: #5c5c5c;
+$color-3: #cf8349;
+$color-4: #0e0e0e; //trainers section
 $color-5: rgb(184, 174, 174); //shadow elipse
-$color-6: #FFF; //white text
+$color-6: #fff; //white text
+$color-7: #c4c4c4; //boxes -> prices
 
-// @import url('/assets/fonts/Pavanam.ttf');
-
-
-
-
-* {
-    margin: 0;
-    padding: 0;
+@mixin sfont {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-html,body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    min-height: 768px;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  min-height: 768px;
 }
 
 .section {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .section-home {
-    margin: 0;
+  margin: 0;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient($color-2 -80%, $color-1);
+  overflow: hidden;
+
+  &__star {
+    position: absolute;
+    bottom: -40%;
+    right: 0;
+    width: calc(75% + 100px);
+    z-index: 0;
+  }
+
+  &__nav {
     position: relative;
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient($color-2 -80%, $color-1);
-    overflow: hidden;
+    height: 12%;
+    width: 75%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-    &__star {
-        position: absolute;
-        bottom: -40%;
-        right: 0;
-        width: calc(75% + 100px);
-        z-index: 0;
+  &__logo {
+    position: relative;
+    width: 230px;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      @include sfont;
+      font-family: "PaytoneOne";
+      font-weight: 200;
+      margin: 2.5vw;
+      color: $color-6;
+      font-size: 1.2em;
+      background: none;
+      padding: 10px;
+      text-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
     }
+  }
 
-    &__nav {
-        position: relative;
-        height: 12%;
-        width: 75%;
-        margin: 0 auto;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  &__content {
+    height: 88%;
+    width: 75%;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 2;
+    position: relative;
+    font-family: "Pavanam";
+
+    h1 {
+      font-family: "PaytoneOne";
+      font-size: 10em;
+      color: $color-6;
+      line-height: 110pt;
+      z-index: 5;
+      margin-top: 8vh;
     }
+  }
 
-    &__logo {
-        position: relative;
-        width: 230px;
-    }
+  &__man-picture {
+    position: absolute;
+    bottom: 35vh;
+    right: 13%;
+    width: 35%;
+  }
 
-    &__menu {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  &__content-text {
+    @include sfont;
+    font-weight: 400;
+    color: $color-6;
+    width: 45%;
+    margin-top: 15vh;
+  }
 
-        a {
-            margin: 2.5vw;
-            color: $color-6;
-            font-size: 1.2em;
-            background: none;
-            padding:10px;
-            text-shadow: 0 2px 5px rgba(255,255,255,0.2)
-        }
-    }
+  &__button {
+    font-family: "PaytoneOne";
+    @include sfont;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $color-6;
+    background: $color-3;
+    padding: 10px 25px;
+    margin-top: 3vh;
+    border: none;
+    border-radius: 3px;
+  }
 
-    &__content {
-        height: 88%;
-        width: 75%;
-        margin: 0 auto;
-        padding: 0;
-        z-index: 2;
-        position: relative;
-        font-family: 'Pavanam';
-
-        h1 {
-            font-family: 'Pavanam';
-            font-size: 10em;
-            color: $color-6;
-            line-height: 110pt;
-            z-index: 5;
-            margin-top: 8vh;
-        }
-    }
-
-    &__man-picture {
-        position: absolute;
-        bottom: 35vh;
-        right: 13%;
-        width: 35%;
-    }
-
-    &__content-text {
-        font-family: 'PaytoneOne', serif;
-        color: $color-6;
-        width: 45%;
-        margin-top: 15vh;
-    }
-
-    &__button {
-        color: $color-6;
-        background: $color-3;
-        padding: 10px 25px;
-        margin-top: 3vh;
-        border: none;
-        border-radius: 3px;
-    }
-
-    &__scroll {
-        position: absolute;
-        bottom: 3vh;
-        left: calc(50% - 30px);
-
-    }
+  &__scroll {
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - 30px);
+  }
 }
 
 .section-about {
-    background: $color-3;
+  background: $color-3;
+  position: relative;
+  height: 100%;
+  min-height: 900px;
+  width: 100%;
+  overflow: hidden;
+  &__about-container {
     position: relative;
     height: 100%;
+  }
+  &__heading {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+    margin-bottom: 0;
+    width: 70vw;
+    max-width: 1000px;
+  }
+  &__container {
+    position: relative;
+    width: 70vw;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+  }
+  &__paragraph {
+    font-family: "Pavanam";
+    font-size: 1em;
+    width: 35%;
+    @include sfont;
+  }
+  &__subtext {
+    margin-left: 20%;
+    margin-top: 20px;
+    color: $color-6;
+    font-family: "Pavanam";
+    font-weight: 400;
+    font-size: 0.8em;
+    @include sfont;
+  }
+  &__vector-1 {
+    background: url("../assets/Vector_about.svg");
+    position: absolute;
     width: 100%;
-    overflow: hidden;
-    &__about-container {
-        position: relative;
-        height: 100%;
-    }
-    &__heading {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 3vh;
-        margin-bottom: 0;
-        width: 70vw;
-        max-width: 1000px;
-    }
-    &__container {
-        position: relative;
-        width: 70vw;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 5vh;
-    }
-    &__paragraph {
-        font-size: 1em;
-        width: 35%;
-    }
-    &__subtext {
-        margin-left: 20%;
-        margin-top: 20px;
-        color: $color-6;
-    }
-    &__vector-1 {
-        background: url("../assets/Vector_about.svg");
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        left: 15vw;
-        top: 500px;
-    }
-    &__vector-2 {
-        background: url("../assets/Vector2_about.svg");
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        left: 0;
-        bottom: 0;
-        background-position-x: 110%;
-    }
-    &__wheel {
-        background: url("../assets/half-circle_about.svg");
-        position: absolute;
-        width: 180px;
-        height: 390px;
-        background-repeat: no-repeat;
-        right: 0;
-        bottom: calc(50% - 195px);
-    }
-    &__ball-1 {
-        background: url("../assets/ellipse-grey_about.png");
-        position: absolute;
-        width: 39px;
-        height: 39px;
-        background-repeat: no-repeat;
-        right: 119px;
-        bottom: calc(50% + 40px)
-    }
-    &__ball-2 {
-        background: url("../assets/ellipse-orange_about.png");
-        position: absolute;
-        width: 39px;
-        height: 39px;
-        background-repeat: no-repeat;
-        right: 128px;
-        bottom: calc(50% - 20px)
-    }
-    &__ball-3 {
-        background: url("../assets/ellipse-grey_about.png");
-        position: absolute;
-        width: 39px;
-        height: 39px;
-        background-repeat: no-repeat;
-        right: 116px;
-        bottom: calc(50% - 80px)
-    }
-    &__ball-4 {
-        background: url("../assets/ellipse-grey_about.png");
-        position: absolute;
-        width: 39px;
-        height: 39px;
-        background-repeat: no-repeat;
-        right: 85px;
-        bottom: calc(50% - 130px)
-    }
-    &__ball-5 {
-        background: url("../assets/ellipse-grey_about.png");
-        position: absolute;
-        width: 39px;
-        height: 39px;
-        background-repeat: no-repeat;
-        right: 37px;
-        bottom: calc(50% - 165px)
-    }
-    &__navigation-wheel {
-        display: block;
-    }
+    height: 100%;
+    background-repeat: no-repeat;
+    left: 15vw;
+    top: 500px;
+  }
+  &__vector-2 {
+    background: url("../assets/Vector2_about.svg");
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    left: 0;
+    bottom: 0;
+    background-position-x: 110%;
+  }
+  &__wheel {
+    background: url("../assets/half-circle_about.svg");
+    position: absolute;
+    width: 180px;
+    height: 390px;
+    background-repeat: no-repeat;
+    right: 0;
+    bottom: calc(50% - 195px);
+  }
+  &__ball-1 {
+    background: url("../assets/ellipse-grey_about.png");
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    background-repeat: no-repeat;
+    right: 119px;
+    bottom: calc(50% + 40px);
+  }
+  &__ball-2 {
+    background: url("../assets/ellipse-orange_about.png");
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    background-repeat: no-repeat;
+    right: 128px;
+    bottom: calc(50% - 20px);
+  }
+  &__ball-3 {
+    background: url("../assets/ellipse-grey_about.png");
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    background-repeat: no-repeat;
+    right: 116px;
+    bottom: calc(50% - 80px);
+  }
+  &__ball-4 {
+    background: url("../assets/ellipse-grey_about.png");
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    background-repeat: no-repeat;
+    right: 85px;
+    bottom: calc(50% - 130px);
+  }
+  &__ball-5 {
+    background: url("../assets/ellipse-grey_about.png");
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    background-repeat: no-repeat;
+    right: 37px;
+    bottom: calc(50% - 165px);
+  }
+  &__navigation-wheel {
+    display: block;
+  }
 }
 
 .section-trainers {
-    background: $color-4;
-    position: relative;
+  background: $color-4;
+  position: relative;
+  height: 100%;
+  min-height: 1000px;
+  width: 100%;
+  overflow: hidden;
+  p {
+    color: $color-6;
+    text-align: center;
+    font-family: "Pavanam";
+    @include sfont;
+    margin: 35px auto;
+    width: 50%;
+  }
+  h1 {
+    font-family: "PaytoneOne";
+    color: $color-6;
+    font-size: 5.2rem;
+    text-align: center;
+    margin: 50px 0 5px 0;
+    @include sfont;
+  }
+  &__paragraph {
+    font-size: 1.2rem;
+    color: $color-6;
+    text-align: center;
+    margin: 0 auto;
+  }
+  &__pictures-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -200px 200px -200px $color-2;
+    border-radius: 50%;
+  }
+  &__picture {
+    margin: -3px;
+    padding: 0;
+    width: 25%;
+  }
+}
+
+.section-price {
+  background: $color-3;
+  background-image: url("../assets/dot_prices.png");
+  background-repeat: repeat;
+  position: relative;
+  height: 100%;
+  min-height: 1000px;
+  width: 100%;
+  overflow: visible;
+
+  &__dotted-overlay {
+    background-image: url("../assets/vector_prices.svg");
+    background-size: cover;
+    background-repeat: repeat;
     height: 100%;
     width: 100%;
-    overflow: hidden;
-    h1{
-        color: $color-6;
-        font-size: 5.2rem;
-        text-align: center;
-        margin: 60px 0 10px 0;
-    }
-    &__paragraph {
-      font-size: 1.4rem;
-      color: $color-6;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__container {
+    position: relative;
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    position: relative;
+    margin: 0 -220px;
+  }
+  &__boxes {
+    width: 100%;
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+  }
+  &__box {
+    width: 290px;
+    height: 400px;
+    background: $color-7;
+    margin: 0 10px;
+    position: relative;
+    h2 {
       text-align: center;
-      width: 50%;
-      margin: 0 auto;
+      margin: 20px;
+      padding: 5px 0;
+      border: solid 10px $color-3;
+      border-radius: 50%/50%;
+      font-family: "PaytoneOne";
+      font-size: 3rem;
     }
-    &__pictures-container {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      max-width: 1500px;
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
-      box-shadow: 0 -200px 200px -200px $color-2;
-      border-radius: 50%;
+    h3 {
+      font-family: "PaytoneOne";
+      text-align: center;
+      margin-bottom: 50px;
+      margin-top: 10px;
+      @include sfont;
     }
-    &__picture {
-      margin: -3px;
-      padding: 0;
-      width: 25%;
+    ul {
+      text-align: center;
+      font-family: "Pavanam";
+      list-style: none;
+      @include sfont;
     }
+  }
+  &__price {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 20px);
+    font-family: "PaytoneOne";
+    font-size: 2rem;
+    @include sfont;
+  }
+  &__number {
+    width: 150px;
+    margin: auto;
+    height: 100px;
+  }
+  &__decoration {
+    position: absolute;
+    top: 60px;
+    right: -5%;
+    width: 100%;
+    height: 100%;
+    text-shadow: 2px 2px 2px #000;
+  }
+  img {
+  }
 }
 
 //EXTRA QUERIES <--------------------------
 //home section on height to fit content
 @media only screen and (max-height: 800px) {
-    .section-home {
-        &__content {
-            h1 {
-                margin-top: 6vh;
-            }
-        }
-        &__content-text {
-            margin-top: 10vh;
-        }
+  .section-home {
+    &__content {
+      h1 {
+        margin-top: 6vh;
+      }
     }
+    &__content-text {
+      margin-top: 10vh;
+    }
+  }
 }
 //home section on width
 @media only screen and (max-width: 1500px) {
-    .section-home {
-        &__menu {
-            a {
-                margin: 1.5vw;
-            }
-        }
-        &__content {
-            h1 {
-                font-size: 8em;
-                line-height: 90pt;
-                margin-top: 6vh;
-            }
-        }
-        &__content-text {
-            font-size: .9rem;
-            margin-top: 10vh;
-        }
+  .section-home {
+    &__menu {
+      a {
+        margin: 1.5vw;
+      }
     }
+    &__content {
+      h1 {
+        font-size: 8em;
+        line-height: 90pt;
+        margin-top: 6vh;
+      }
+    }
+    &__content-text {
+      font-size: 0.9rem;
+      margin-top: 10vh;
+    }
+  }
 }
 
 //navigation wheel on about section
 @media only screen and (max-width: 1200px) {
-    .section-about {
-      &__navigation-wheel {
-          display: none;
-      }
-      &__heading {
-        margin-top: 7vh;
-      }
+  .section-about {
+    &__navigation-wheel {
+      display: none;
     }
-
+    &__heading {
+      margin-top: 7vh;
+    }
+  }
 }
 
 //STANDARD QUERIES <--------------------------
 @media only screen and (max-width: 1399px) {
   .section-trainers {
-      h1{
-          font-size: 4rem;
-          margin: 140px 0 50px 0;
-      }
-      &__paragraph {
-        font-size: 1rem;
-      }
+    h1 {
+      font-size: 4rem;
+      margin: 140px 0 50px 0;
+    }
+    &__paragraph {
+      font-size: 1rem;
+    }
   }
 }
 
 @media only screen and (max-width: 799px) {
   .section-trainers {
-      h1{
-          font-size: 3rem;
-          margin: 5%;
-      }
+    h1 {
+      font-size: 3rem;
+      margin: 5%;
+    }
   }
 }
