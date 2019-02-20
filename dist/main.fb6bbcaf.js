@@ -176,7 +176,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../assets/Vector_about.svg":[["Vector_about.30452af3.svg","assets/Vector_about.svg"],"assets/Vector_about.svg"],"./../assets/Vector2_about.svg":[["Vector2_about.43002d8a.svg","assets/Vector2_about.svg"],"assets/Vector2_about.svg"],"./../assets/half-circle_about.svg":[["half-circle_about.28f2ab62.svg","assets/half-circle_about.svg"],"assets/half-circle_about.svg"],"./../assets/ellipse-grey_about.png":[["ellipse-grey_about.18b53ff2.png","assets/ellipse-grey_about.png"],"assets/ellipse-grey_about.png"],"./../assets/ellipse-orange_about.png":[["ellipse-orange_about.9bc21254.png","assets/ellipse-orange_about.png"],"assets/ellipse-orange_about.png"],"./../assets/dot_prices.png":[["dot_prices.6c197969.png","assets/dot_prices.png"],"assets/dot_prices.png"],"./../assets/vector_prices.svg":[["vector_prices.be3f7a7b.svg","assets/vector_prices.svg"],"assets/vector_prices.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/logo_home.png":[function(require,module,exports) {
+},{"./../assets/Vector_about.svg":[["Vector_about.30452af3.svg","assets/Vector_about.svg"],"assets/Vector_about.svg"],"./../assets/Vector2_about.svg":[["Vector2_about.43002d8a.svg","assets/Vector2_about.svg"],"assets/Vector2_about.svg"],"./../assets/half-circle_about.svg":[["half-circle_about.28f2ab62.svg","assets/half-circle_about.svg"],"assets/half-circle_about.svg"],"./../assets/ellipse-grey_about.png":[["ellipse-grey_about.18b53ff2.png","assets/ellipse-grey_about.png"],"assets/ellipse-grey_about.png"],"./../assets/ellipse-orange_about.png":[["ellipse-orange_about.9bc21254.png","assets/ellipse-orange_about.png"],"assets/ellipse-orange_about.png"],"./../assets/dot_prices.png":[["dot_prices.6c197969.png","assets/dot_prices.png"],"assets/dot_prices.png"],"./../assets/vector_prices.svg":[["vector_prices.be3f7a7b.svg","assets/vector_prices.svg"],"assets/vector_prices.svg"],"./../assets/top_price.png":[["top_price.d8646b99.png","assets/top_price.png"],"assets/top_price.png"],"./../assets/background_contacts.png":[["background_contacts.dd455416.png","assets/background_contacts.png"],"assets/background_contacts.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/logo_home.png":[function(require,module,exports) {
 module.exports = "/logo_home.07ed628a.png";
 },{}],"assets/star_home.svg":[function(require,module,exports) {
 module.exports = "/star_home.b575be31.svg";
@@ -355,7 +355,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64205" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52758" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
