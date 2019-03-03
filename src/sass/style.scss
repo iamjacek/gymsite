@@ -1,10 +1,4 @@
-$color-1: #000; //font
-$color-2: #5c5c5c;
-$color-3: #cf8349;
-$color-4: #0e0e0e; //trainers section
-$color-5: rgb(184, 174, 174); //shadow elipse
-$color-6: #fff; //white text
-$color-7: #c4c4c4; //boxes -> prices
+@import "variables";
 
 @mixin sfont {
   -webkit-font-smoothing: antialiased;
@@ -23,6 +17,7 @@ body {
   height: 100%;
   width: 100%;
   min-height: 768px;
+  scroll-behavior: smooth;
 }
 
 .section {
@@ -84,6 +79,7 @@ body {
       background: none;
       padding: 10px;
       text-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+      text-decoration: none;
     }
   }
 
@@ -119,25 +115,6 @@ body {
     color: $color-6;
     width: 45%;
     margin-top: 15vh;
-  }
-
-  &__button {
-    font-family: "PaytoneOne";
-    @include sfont;
-    font-weight: 400;
-    font-size: 1rem;
-    color: $color-6;
-    background: $color-3;
-    padding: 10px 25px;
-    margin-top: 3vh;
-    border: none;
-    border-radius: 3px;
-  }
-
-  &__scroll {
-    position: absolute;
-    bottom: 50px;
-    left: calc(50% - 30px);
   }
 }
 
@@ -206,63 +183,6 @@ body {
     bottom: 0;
     background-position-x: 110%;
   }
-  &__wheel {
-    background: url("../assets/half-circle_about.svg");
-    position: absolute;
-    width: 180px;
-    height: 390px;
-    background-repeat: no-repeat;
-    right: 0;
-    bottom: calc(50% - 195px);
-  }
-  &__ball-1 {
-    background: url("../assets/ellipse-grey_about.png");
-    position: absolute;
-    width: 39px;
-    height: 39px;
-    background-repeat: no-repeat;
-    right: 119px;
-    bottom: calc(50% + 40px);
-  }
-  &__ball-2 {
-    background: url("../assets/ellipse-orange_about.png");
-    position: absolute;
-    width: 39px;
-    height: 39px;
-    background-repeat: no-repeat;
-    right: 128px;
-    bottom: calc(50% - 20px);
-  }
-  &__ball-3 {
-    background: url("../assets/ellipse-grey_about.png");
-    position: absolute;
-    width: 39px;
-    height: 39px;
-    background-repeat: no-repeat;
-    right: 116px;
-    bottom: calc(50% - 80px);
-  }
-  &__ball-4 {
-    background: url("../assets/ellipse-grey_about.png");
-    position: absolute;
-    width: 39px;
-    height: 39px;
-    background-repeat: no-repeat;
-    right: 85px;
-    bottom: calc(50% - 130px);
-  }
-  &__ball-5 {
-    background: url("../assets/ellipse-grey_about.png");
-    position: absolute;
-    width: 39px;
-    height: 39px;
-    background-repeat: no-repeat;
-    right: 37px;
-    bottom: calc(50% - 165px);
-  }
-  &__navigation-wheel {
-    display: block;
-  }
 }
 
 //***********************************************************************
@@ -325,7 +245,7 @@ body {
   background-repeat: repeat;
   position: relative;
   height: 100%;
-  min-height: 1000px;
+  min-height: 900px;
   width: 100%;
   overflow: hidden;
 
@@ -458,7 +378,7 @@ body {
 
   &__people-container {
     width: 90%;
-    height: 50px;
+    height: 500px;
     top: 0;
     left: 0;
     position: absolute;
@@ -504,21 +424,27 @@ body {
 
   &__images {
     position: absolute;
-    top: -300px;
+    top: 0;
+    left: 0;
+    margin: -8vw 7%;
+    width: 90%;
     display: flex;
     justify-content: center;
-    margin-left: 30px;
     img {
       width: 100%;
     }
   }
 
-  &__image-2 {
-    margin-left: -197px;
+  &__image {
+    margin: -100px;
     margin-right: 0;
     padding: 0;
-    width: 582px;
+    width: 33%;
     height: 582px;
+  }
+
+  &__image-mid {
+    transform: scale(1.2);
   }
 }
 

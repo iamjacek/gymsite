@@ -176,7 +176,31 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../assets/Vector_about.svg":[["Vector_about.30452af3.svg","assets/Vector_about.svg"],"assets/Vector_about.svg"],"./../assets/Vector2_about.svg":[["Vector2_about.43002d8a.svg","assets/Vector2_about.svg"],"assets/Vector2_about.svg"],"./../assets/half-circle_about.svg":[["half-circle_about.28f2ab62.svg","assets/half-circle_about.svg"],"assets/half-circle_about.svg"],"./../assets/ellipse-grey_about.png":[["ellipse-grey_about.18b53ff2.png","assets/ellipse-grey_about.png"],"assets/ellipse-grey_about.png"],"./../assets/ellipse-orange_about.png":[["ellipse-orange_about.9bc21254.png","assets/ellipse-orange_about.png"],"assets/ellipse-orange_about.png"],"./../assets/dot_prices.png":[["dot_prices.6c197969.png","assets/dot_prices.png"],"assets/dot_prices.png"],"./../assets/vector_prices.svg":[["vector_prices.be3f7a7b.svg","assets/vector_prices.svg"],"assets/vector_prices.svg"],"./../assets/top_price.png":[["top_price.d8646b99.png","assets/top_price.png"],"assets/top_price.png"],"./../assets/background_contacts.png":[["background_contacts.dd455416.png","assets/background_contacts.png"],"assets/background_contacts.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/logo_home.png":[function(require,module,exports) {
+},{"./../assets/Vector_about.svg":[["Vector_about.30452af3.svg","assets/Vector_about.svg"],"assets/Vector_about.svg"],"./../assets/Vector2_about.svg":[["Vector2_about.43002d8a.svg","assets/Vector2_about.svg"],"assets/Vector2_about.svg"],"./../assets/dot_prices.png":[["dot_prices.6c197969.png","assets/dot_prices.png"],"assets/dot_prices.png"],"./../assets/vector_prices.svg":[["vector_prices.be3f7a7b.svg","assets/vector_prices.svg"],"assets/vector_prices.svg"],"./../assets/top_price.png":[["top_price.d8646b99.png","assets/top_price.png"],"assets/top_price.png"],"./../assets/background_contacts.png":[["background_contacts.dd455416.png","assets/background_contacts.png"],"assets/background_contacts.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"sass/menu.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"sass/button.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"sass/scroll.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/ellipse-grey_about.png":[function(require,module,exports) {
+module.exports = "/ellipse-grey_about.18b53ff2.png";
+},{}],"assets/ellipse-orange_about.png":[function(require,module,exports) {
+module.exports = "/ellipse-orange_about.9bc21254.png";
+},{}],"sass/wheel.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./../assets/ellipse-grey_about.png":[["ellipse-grey_about.18b53ff2.png","assets/ellipse-grey_about.png"],"assets/ellipse-grey_about.png"],"./../assets/ellipse-orange_about.png":[["ellipse-orange_about.9bc21254.png","assets/ellipse-orange_about.png"],"assets/ellipse-orange_about.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/logo_home.png":[function(require,module,exports) {
 module.exports = "/logo_home.07ed628a.png";
 },{}],"assets/star_home.svg":[function(require,module,exports) {
 module.exports = "/star_home.b575be31.svg";
@@ -246,6 +270,14 @@ exports.homedir = function () {
 
 var _style = _interopRequireDefault(require("../sass/style.scss"));
 
+var _menu = _interopRequireDefault(require("../sass/menu.scss"));
+
+var _button = _interopRequireDefault(require("../sass/button.scss"));
+
+var _scroll = _interopRequireDefault(require("../sass/scroll.scss"));
+
+var _wheel = _interopRequireDefault(require("../sass/wheel.scss"));
+
 var _logo_home = _interopRequireDefault(require("../assets/logo_home.png"));
 
 var _star_home = _interopRequireDefault(require("../assets/star_home.svg"));
@@ -260,9 +292,15 @@ var _Pavanam = _interopRequireDefault(require("../assets/fonts/Pavanam.ttf"));
 
 var _PaytoneOne = _interopRequireDefault(require("../assets/fonts/PaytoneOne.ttf"));
 
+var _ellipseGrey_about = _interopRequireDefault(require("../assets/ellipse-grey_about.png"));
+
+var _ellipseOrange_about = _interopRequireDefault(require("../assets/ellipse-orange_about.png"));
+
 var _os = require("os");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
 
 //fonts
 var newStyle = document.createElement("style");
@@ -298,11 +336,25 @@ a.alt = "logo";
 a.className = "section-home__logo";
 h[0].insertBefore(a, h[0].childNodes[0]);
 var homeSection = document.getElementsByClassName("section-home");
+var alink = document.createElement("a");
+alink.href = "#about";
+alink.className = "section-home__link-scroll";
 var scrollHomePageInd = document.createElement("img");
+var scrollHomePageInd2 = document.createElement("img");
+var scrollHomePageInd3 = document.createElement("img");
 scrollHomePageInd.src = _chevron_home.default;
+scrollHomePageInd2.src = _chevron_home.default;
+scrollHomePageInd3.src = _chevron_home.default;
 scrollHomePageInd.alt = "scroll arrow";
+scrollHomePageInd2.alt = "scroll arrow";
+scrollHomePageInd3.alt = "scroll arrow";
 scrollHomePageInd.className = "section-home__scroll";
-homeSection[0].appendChild(scrollHomePageInd); // images ABOUT SEC
+scrollHomePageInd2.className = "section-home__scroll section-home__scroll--delayed-2";
+scrollHomePageInd3.className = "section-home__scroll section-home__scroll--delayed-3";
+homeSection[0].appendChild(alink);
+alink.appendChild(scrollHomePageInd);
+alink.appendChild(scrollHomePageInd2);
+alink.appendChild(scrollHomePageInd3); // images ABOUT SEC
 
 var secAbout = document.getElementsByClassName("section-about");
 var imgHead = document.createElement("img");
@@ -327,8 +379,269 @@ var aboutContainer = document.createElement("div");
 aboutContainer.className = "section-about__about-container";
 aboutContainer.appendChild(imgHead);
 aboutContainer.appendChild(parCont);
-secAbout[0].appendChild(aboutContainer);
-},{"../sass/style.scss":"sass/style.scss","../assets/logo_home.png":"assets/logo_home.png","../assets/star_home.svg":"assets/star_home.svg","../assets/man_home.png":"assets/man_home.png","../assets/chevron_home.svg":"assets/chevron_home.svg","../assets/heading_about.png":"assets/heading_about.png","../assets/fonts/Pavanam.ttf":"assets/fonts/Pavanam.ttf","../assets/fonts/PaytoneOne.ttf":"assets/fonts/PaytoneOne.ttf","os":"../node_modules/os-browserify/browser.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+secAbout[0].appendChild(aboutContainer); //button effect
+
+var aa = document.querySelector(".section-home__button");
+var ab = document.querySelector(".section-home__arrow");
+aa.addEventListener("mouseover", function () {
+  console.log("hover");
+  this.classList.add("section-home__button--hover");
+  ab.classList.add("section-home__arrow--hover");
+});
+aa.addEventListener("mouseout", function () {
+  console.log("hover");
+  this.classList.remove("section-home__button--hover");
+  ab.classList.remove("section-home__arrow--hover");
+}); //NAVIGATION WHEEL ***********************************
+//appear on every sections just slightly hide on home due to home menu
+
+window.addEventListener("scroll", function () {
+  var sectionHomeH = document.querySelector("#home").offsetHeight;
+  var scrollTop = window.pageYOffset !== undefined ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+  if (scrollTop < sectionHomeH / 1.3) {
+    document.querySelector(".section-about__navigation-wheel").style.right = "-30px";
+  } else if (scrollTop >= sectionHomeH / 5) {
+    document.querySelector(".section-about__navigation-wheel").style.right = "0";
+  }
+});
+var homeDot = document.querySelector(".section-about__ball-1");
+homeDot.addEventListener("mouseover", function () {
+  var styleE = document.head.appendChild(document.createElement("style"));
+  styleE.innerHTML = ".section-about__ball-1::before {transform: scale(1) translateX(0);}";
+});
+homeDot.addEventListener("mouseout", function () {
+  var styleE = document.head.appendChild(document.createElement("style"));
+  styleE.innerHTML = ".section-about__ball-1::before {transform: scale(0) translateX(-200px);}";
+});
+var homeDot2 = document.querySelector(".section-about__ball-2");
+homeDot2.addEventListener("mouseover", function () {
+  var styleE = document.head.appendChild(document.createElement("style"));
+  styleE.innerHTML = ".section-about__ball-2::before {transform: scale(1) translateX(0);}";
+});
+homeDot2.addEventListener("mouseout", function () {
+  var styleE = document.head.appendChild(document.createElement("style"));
+  styleE.innerHTML = ".section-about__ball-2::before {transform: scale(0) translateX(-200px);}";
+});
+var homeDot3 = document.querySelector(".section-about__ball-3");
+homeDot3.addEventListener("mouseover", function () {
+  var styleE = document.head.appendChild(document.createElement("style"));
+  styleE.innerHTML = ".section-about__ball-3::before {transform: scale(1) translateX(0);}";
+});
+homeDot3.addEventListener("mouseout", function () {
+  var styleE = document.head.appendChild(document.createElement("style"));
+  styleE.innerHTML = ".section-about__ball-3::before {transform: scale(0) translateX(-200px);}";
+});
+var homeDot4 = document.querySelector(".section-about__ball-4");
+homeDot4.addEventListener("mouseover", function () {
+  var styleE = document.head.appendChild(document.createElement("style"));
+  styleE.innerHTML = ".section-about__ball-4::before {transform: scale(1) translateX(0);}";
+});
+homeDot4.addEventListener("mouseout", function () {
+  var styleE = document.head.appendChild(document.createElement("style"));
+  styleE.innerHTML = ".section-about__ball-4::before {transform: scale(0) translateX(-200px);}";
+});
+var homeDot5 = document.querySelector(".section-about__ball-5");
+homeDot5.addEventListener("mouseover", function () {
+  var styleE = document.head.appendChild(document.createElement("style"));
+  styleE.innerHTML = ".section-about__ball-5::before {transform: scale(1) translateX(0);}";
+});
+homeDot5.addEventListener("mouseout", function () {
+  var styleE = document.head.appendChild(document.createElement("style"));
+  styleE.innerHTML = ".section-about__ball-5::before {transform: scale(0) translateX(-200px);}";
+}); //change the dot color down to active section
+
+var bgFlag = "";
+window.addEventListener("scroll", function () {
+  var sectionHomeH = document.querySelector("#home").offsetHeight;
+  var sectionAboutH = document.querySelector("#about").offsetHeight;
+  var sectionTrainersH = document.querySelector("#trainers").offsetHeight;
+  var sectionPriceH = document.querySelector("#price").offsetHeight;
+  var sectionContactsH = document.querySelector("#contacts").offsetHeight;
+  var scrollTop = window.pageYOffset !== undefined ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop; //if user on about section
+
+  if (scrollTop <= sectionHomeH + sectionAboutH - 200 && scrollTop > sectionAboutH - 200) {
+    var styleBall1 = document.querySelector(".section-about__ball-1");
+    styleBall1.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+    styleBall1.style.backgroundPosition = "center";
+    styleBall1.style.backgroundSize = "cover";
+    var styleBall2 = document.querySelector(".section-about__ball-2");
+    styleBall2.style.background = "url('" + _ellipseOrange_about.default + "') no-repeat";
+    styleBall2.style.backgroundPosition = "center";
+    styleBall2.style.backgroundSize = "cover";
+    var styleBall3 = document.querySelector(".section-about__ball-3");
+    styleBall3.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+    styleBall3.style.backgroundPosition = "center";
+    styleBall3.style.backgroundSize = "cover";
+    var styleBall4 = document.querySelector(".section-about__ball-4");
+    styleBall4.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+    styleBall4.style.backgroundPosition = "center";
+    styleBall4.style.backgroundSize = "cover";
+    var styleBall5 = document.querySelector(".section-about__ball-5");
+    styleBall5.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+    styleBall5.style.backgroundPosition = "center";
+    styleBall5.style.backgroundSize = "cover"; //before elements background
+
+    if (bgFlag !== "about") {
+      var styleBg = document.head.appendChild(document.createElement("style"));
+      styleBg.innerHTML = ".section-about__ball-1::before {background: #d9d9d9;}.section-about__ball-2::before {background: #fff;}.section-about__ball-3::before {background: #d9d9d9;}.section-about__ball-4::before {background: #d9d9d9;}.section-about__ball-5::before {background: #d9d9d9;}";
+      bgFlag = (_readOnlyError("bgFlag"), "about");
+    }
+  } //if user is over home section
+  else if (scrollTop < sectionAboutH - 200) {
+      var _styleBall = document.querySelector(".section-about__ball-1");
+
+      _styleBall.style.background = "url('" + _ellipseOrange_about.default + "') no-repeat";
+      _styleBall.style.backgroundPosition = "center";
+      _styleBall.style.backgroundSize = "cover";
+
+      var _styleBall2 = document.querySelector(".section-about__ball-2");
+
+      _styleBall2.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+      _styleBall2.style.backgroundPosition = "center";
+      _styleBall2.style.backgroundSize = "cover";
+
+      var _styleBall3 = document.querySelector(".section-about__ball-3");
+
+      _styleBall3.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+      _styleBall3.style.backgroundPosition = "center";
+      _styleBall3.style.backgroundSize = "cover";
+
+      var _styleBall4 = document.querySelector(".section-about__ball-4");
+
+      _styleBall4.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+      _styleBall4.style.backgroundPosition = "center";
+      _styleBall4.style.backgroundSize = "cover";
+
+      var _styleBall5 = document.querySelector(".section-about__ball-5");
+
+      _styleBall5.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+      _styleBall5.style.backgroundPosition = "center";
+      _styleBall5.style.backgroundSize = "cover"; //before elements background
+
+      if (bgFlag !== "home") {
+        var _styleBg = document.head.appendChild(document.createElement("style"));
+
+        _styleBg.innerHTML = ".section-about__ball-1::before {background: #fff;}.section-about__ball-2::before {background: #d9d9d9;}.section-about__ball-3::before {background: #d9d9d9;}.section-about__ball-4::before {background: #d9d9d9;}.section-about__ball-5::before {background: #d9d9d9;}";
+        bgFlag = (_readOnlyError("bgFlag"), "home");
+      }
+    } //if user is over trainers section
+    else if (scrollTop >= sectionHomeH + sectionAboutH - 200 && scrollTop < sectionAboutH + sectionHomeH + sectionPriceH - 200) {
+        var _styleBall6 = document.querySelector(".section-about__ball-1");
+
+        _styleBall6.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+        _styleBall6.style.backgroundPosition = "center";
+        _styleBall6.style.backgroundSize = "cover";
+
+        var _styleBall7 = document.querySelector(".section-about__ball-2");
+
+        _styleBall7.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+        _styleBall7.style.backgroundPosition = "center";
+        _styleBall7.style.backgroundSize = "cover";
+
+        var _styleBall8 = document.querySelector(".section-about__ball-3");
+
+        _styleBall8.style.background = "url('" + _ellipseOrange_about.default + "') no-repeat";
+        _styleBall8.style.backgroundPosition = "center";
+        _styleBall8.style.backgroundSize = "cover";
+
+        var _styleBall9 = document.querySelector(".section-about__ball-4");
+
+        _styleBall9.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+        _styleBall9.style.backgroundPosition = "center";
+        _styleBall9.style.backgroundSize = "cover";
+
+        var _styleBall10 = document.querySelector(".section-about__ball-5");
+
+        _styleBall10.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+        _styleBall10.style.backgroundPosition = "center";
+        _styleBall10.style.backgroundSize = "cover"; //before elements background
+
+        if (bgFlag !== "trainers") {
+          var _styleBg2 = document.head.appendChild(document.createElement("style"));
+
+          _styleBg2.innerHTML = ".section-about__ball-1::before {background: #d9d9d9;}.section-about__ball-2::before {background: #d9d9d9;}.section-about__ball-3::before {background: #fff;}.section-about__ball-4::before {background: #d9d9d9;}.section-about__ball-5::before {background: #d9d9d9;}";
+          bgFlag = (_readOnlyError("bgFlag"), "trainers");
+        }
+      } //if user is over price section
+      else if (scrollTop >= sectionHomeH + sectionAboutH + sectionPriceH - 200 && scrollTop < sectionAboutH + sectionHomeH + sectionPriceH + sectionContactsH - 200) {
+          var _styleBall11 = document.querySelector(".section-about__ball-1");
+
+          _styleBall11.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+          _styleBall11.style.backgroundPosition = "center";
+          _styleBall11.style.backgroundSize = "cover";
+
+          var _styleBall12 = document.querySelector(".section-about__ball-2");
+
+          _styleBall12.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+          _styleBall12.style.backgroundPosition = "center";
+          _styleBall12.style.backgroundSize = "cover";
+
+          var _styleBall13 = document.querySelector(".section-about__ball-3");
+
+          _styleBall13.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+          _styleBall13.style.backgroundPosition = "center";
+          _styleBall13.style.backgroundSize = "cover";
+
+          var _styleBall14 = document.querySelector(".section-about__ball-4");
+
+          _styleBall14.style.background = "url('" + _ellipseOrange_about.default + "') no-repeat";
+          _styleBall14.style.backgroundPosition = "center";
+          _styleBall14.style.backgroundSize = "cover";
+
+          var _styleBall15 = document.querySelector(".section-about__ball-5");
+
+          _styleBall15.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+          _styleBall15.style.backgroundPosition = "center";
+          _styleBall15.style.backgroundSize = "cover"; //before elements background
+
+          if (bgFlag !== "price") {
+            var _styleBg3 = document.head.appendChild(document.createElement("style"));
+
+            _styleBg3.innerHTML = ".section-about__ball-1::before {background: #d9d9d9;}.section-about__ball-2::before {background: #d9d9d9;}.section-about__ball-3::before {background: #d9d9d9;}.section-about__ball-4::before {background: #fff;}.section-about__ball-5::before {background: #d9d9d9;}";
+            bgFlag = (_readOnlyError("bgFlag"), "price");
+          }
+        } //if user is over contacts section
+        else if (scrollTop > sectionAboutH + sectionHomeH + sectionPriceH + sectionContactsH - 200) {
+            var _styleBall16 = document.querySelector(".section-about__ball-1");
+
+            _styleBall16.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+            _styleBall16.style.backgroundPosition = "center";
+            _styleBall16.style.backgroundSize = "cover";
+
+            var _styleBall17 = document.querySelector(".section-about__ball-2");
+
+            _styleBall17.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+            _styleBall17.style.backgroundPosition = "center";
+            _styleBall17.style.backgroundSize = "cover";
+
+            var _styleBall18 = document.querySelector(".section-about__ball-3");
+
+            _styleBall18.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+            _styleBall18.style.backgroundPosition = "center";
+            _styleBall18.style.backgroundSize = "cover";
+
+            var _styleBall19 = document.querySelector(".section-about__ball-4");
+
+            _styleBall19.style.background = "url('" + _ellipseGrey_about.default + "') no-repeat";
+            _styleBall19.style.backgroundPosition = "center";
+            _styleBall19.style.backgroundSize = "cover";
+
+            var _styleBall20 = document.querySelector(".section-about__ball-5");
+
+            _styleBall20.style.background = "url('" + _ellipseOrange_about.default + "') no-repeat";
+            _styleBall20.style.backgroundPosition = "center";
+            _styleBall20.style.backgroundSize = "cover"; //before elements background
+
+            if (bgFlag !== "contacts") {
+              var _styleBg4 = document.head.appendChild(document.createElement("style"));
+
+              _styleBg4.innerHTML = ".section-about__ball-1::before {background: #d9d9d9;}.section-about__ball-2::before {background: #d9d9d9;}.section-about__ball-3::before {background: #d9d9d9;}.section-about__ball-4::before {background: #d9d9d9;}.section-about__ball-5::before {background: #fff;}";
+              bgFlag = (_readOnlyError("bgFlag"), "contacts");
+            }
+          }
+});
+},{"../sass/style.scss":"sass/style.scss","../sass/menu.scss":"sass/menu.scss","../sass/button.scss":"sass/button.scss","../sass/scroll.scss":"sass/scroll.scss","../sass/wheel.scss":"sass/wheel.scss","../assets/logo_home.png":"assets/logo_home.png","../assets/star_home.svg":"assets/star_home.svg","../assets/man_home.png":"assets/man_home.png","../assets/chevron_home.svg":"assets/chevron_home.svg","../assets/heading_about.png":"assets/heading_about.png","../assets/fonts/Pavanam.ttf":"assets/fonts/Pavanam.ttf","../assets/fonts/PaytoneOne.ttf":"assets/fonts/PaytoneOne.ttf","../assets/ellipse-grey_about.png":"assets/ellipse-grey_about.png","../assets/ellipse-orange_about.png":"assets/ellipse-orange_about.png","os":"../node_modules/os-browserify/browser.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -355,7 +668,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52758" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63282" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

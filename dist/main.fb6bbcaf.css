@@ -10,6 +10,7 @@ body {
   height: 100%;
   width: 100%;
   min-height: 768px;
+  scroll-behavior: smooth;
 }
 
 .section {
@@ -80,6 +81,7 @@ body {
   background: none;
   padding: 10px;
   text-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+  text-decoration: none;
 }
 .section-home__content {
   height: 88%;
@@ -111,24 +113,6 @@ body {
   color: #fff;
   width: 45%;
   margin-top: 15vh;
-}
-.section-home__button {
-  font-family: "PaytoneOne";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 1rem;
-  color: #fff;
-  background: #cf8349;
-  padding: 10px 25px;
-  margin-top: 3vh;
-  border: none;
-  border-radius: 3px;
-}
-.section-home__scroll {
-  position: absolute;
-  bottom: 50px;
-  left: calc(50% - 30px);
 }
 
 .section-about {
@@ -196,63 +180,6 @@ body {
   bottom: 0;
   background-position-x: 110%;
 }
-.section-about__wheel {
-  background: url("half-circle_about.28f2ab62.svg");
-  position: absolute;
-  width: 180px;
-  height: 390px;
-  background-repeat: no-repeat;
-  right: 0;
-  bottom: calc(50% - 195px);
-}
-.section-about__ball-1 {
-  background: url("ellipse-grey_about.18b53ff2.png");
-  position: absolute;
-  width: 39px;
-  height: 39px;
-  background-repeat: no-repeat;
-  right: 119px;
-  bottom: calc(50% + 40px);
-}
-.section-about__ball-2 {
-  background: url("ellipse-orange_about.9bc21254.png");
-  position: absolute;
-  width: 39px;
-  height: 39px;
-  background-repeat: no-repeat;
-  right: 128px;
-  bottom: calc(50% - 20px);
-}
-.section-about__ball-3 {
-  background: url("ellipse-grey_about.18b53ff2.png");
-  position: absolute;
-  width: 39px;
-  height: 39px;
-  background-repeat: no-repeat;
-  right: 116px;
-  bottom: calc(50% - 80px);
-}
-.section-about__ball-4 {
-  background: url("ellipse-grey_about.18b53ff2.png");
-  position: absolute;
-  width: 39px;
-  height: 39px;
-  background-repeat: no-repeat;
-  right: 85px;
-  bottom: calc(50% - 130px);
-}
-.section-about__ball-5 {
-  background: url("ellipse-grey_about.18b53ff2.png");
-  position: absolute;
-  width: 39px;
-  height: 39px;
-  background-repeat: no-repeat;
-  right: 37px;
-  bottom: calc(50% - 165px);
-}
-.section-about__navigation-wheel {
-  display: block;
-}
 
 .section-trainers {
   background: #0e0e0e;
@@ -311,7 +238,7 @@ body {
   background-repeat: repeat;
   position: relative;
   height: 100%;
-  min-height: 1000px;
+  min-height: 900px;
   width: 100%;
   overflow: hidden;
 }
@@ -446,7 +373,7 @@ body {
 }
 .section-price__people-container {
   width: 90%;
-  height: 50px;
+  height: 500px;
   top: 0;
   left: 0;
   position: absolute;
@@ -492,24 +419,30 @@ body {
 }
 .section-contacts__images {
   position: absolute;
-  top: -300px;
+  top: 0;
+  left: 0;
+  margin: -8vw 7%;
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 30px;
 }
 .section-contacts__images img {
   width: 100%;
 }
-.section-contacts__image-2 {
-  margin-left: -197px;
+.section-contacts__image {
+  margin: -100px;
   margin-right: 0;
   padding: 0;
-  width: 582px;
+  width: 33%;
   height: 582px;
+}
+.section-contacts__image-mid {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 @media only screen and (max-height: 800px) {
@@ -591,4 +524,323 @@ body {
     bottom: -115px;
     left: -20px;
   }
+}.section-home__menu a:hover {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.section-home__menu a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 5px;
+  content: ".";
+  color: transparent;
+  background: #000;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+.section-home__menu a:hover:after {
+  opacity: 0.2;
+  visibility: visible;
+  height: 100%;
+}
+.section-home__menu a,
+.section-home__menu a:after,
+.section-home__menu a:before {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}.section-home__button {
+  cursor: pointer;
+  font-family: "PaytoneOne";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #fff;
+  background: #cf8349;
+  padding: 10px 0 10px 55px;
+  margin-top: 3vh;
+  border: none;
+  border-radius: 3px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.section-home__button--hover {
+  background: #d4915d;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  padding: 10px 25px 10px 25px;
+}
+.section-home__arrow {
+  -webkit-transform: scale(0.01);
+          transform: scale(0.01);
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.section-home__arrow--hover {
+  opacity: 1;
+  -webkit-transform: scale(0.3) rotate(-90deg) translate(-15px, 50px);
+          transform: scale(0.3) rotate(-90deg) translate(-15px, 50px);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+  }
+  50% {
+    -webkit-transform: translatey(-20px);
+            transform: translatey(-20px);
+  }
+  100% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+  }
+}
+@keyframes floating {
+  0% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+  }
+  50% {
+    -webkit-transform: translatey(-20px);
+            transform: translatey(-20px);
+  }
+  100% {
+    -webkit-transform: translatey(0px);
+            transform: translatey(0px);
+  }
+}
+.section-home__link-scroll {
+  z-index: 3;
+  width: 80px;
+  height: 20px;
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 30px);
+}
+.section-home__scroll {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translatey(0px);
+          transform: translatey(0px);
+  -webkit-animation: floating 3s ease-in-out infinite;
+          animation: floating 3s ease-in-out infinite;
+}
+.section-home__scroll--delayed-2 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.section-home__scroll--delayed-3 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg) translate(300px) rotate(0deg);
+            transform: rotate(0deg) translate(300px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translate(300px) rotate(-360deg);
+            transform: rotate(360deg) translate(300px) rotate(-360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg) translate(300px) rotate(0deg);
+            transform: rotate(0deg) translate(300px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translate(300px) rotate(-360deg);
+            transform: rotate(360deg) translate(300px) rotate(-360deg);
+  }
+}
+.section-about__navigation-wheel {
+  display: block;
+  position: fixed;
+  top: 50%;
+  right: -30px;
+  z-index: 100;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.section-about__wheel {
+  position: absolute;
+}
+.section-about__ball-1 {
+  background: url("ellipse-grey_about.18b53ff2.png");
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 30px;
+  bottom: calc(50% + 100px);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.section-about__ball-1::before {
+  content: "HOME";
+  position: absolute;
+  width: 70px;
+  height: 25px;
+  background: #d9d9d9;
+  padding: 5px;
+  padding-right: 15px;
+  left: -70px;
+  top: 0;
+  font-family: "Pavanam";
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: #cf8349;
+  z-index: 90;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transform: scale(0) translateX(-200px);
+          transform: scale(0) translateX(-200px);
+}
+.section-about__ball-2 {
+  background: url("ellipse-orange_about.9bc21254.png");
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 30px;
+  bottom: calc(50% + 50px);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.section-about__ball-2::before {
+  content: "ABOUT";
+  position: absolute;
+  width: 70px;
+  height: 25px;
+  background: #fff;
+  padding: 5px;
+  padding-right: 15px;
+  left: -70px;
+  top: 0;
+  font-family: "Pavanam";
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: #cf8349;
+  z-index: 90;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transform: scale(0) translateX(-200px);
+          transform: scale(0) translateX(-200px);
+}
+.section-about__ball-3 {
+  background: url("ellipse-grey_about.18b53ff2.png");
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 30px;
+  bottom: calc(50%);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.section-about__ball-3::before {
+  content: "TRAINERS";
+  position: absolute;
+  width: 70px;
+  height: 25px;
+  background: #d9d9d9;
+  padding: 5px;
+  padding-right: 15px;
+  left: -70px;
+  top: 0;
+  font-family: "Pavanam";
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: #cf8349;
+  z-index: 90;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transform: scale(0) translateX(-200px);
+          transform: scale(0) translateX(-200px);
+}
+.section-about__ball-4 {
+  background: url("ellipse-grey_about.18b53ff2.png");
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 30px;
+  bottom: calc(50% - 50px);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.section-about__ball-4::before {
+  content: "PRICE";
+  position: absolute;
+  width: 70px;
+  height: 25px;
+  background: #d9d9d9;
+  padding: 5px;
+  padding-right: 15px;
+  left: -70px;
+  top: 0;
+  font-family: "Pavanam";
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: #cf8349;
+  z-index: 90;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transform: scale(0) translateX(-200px);
+          transform: scale(0) translateX(-200px);
+}
+.section-about__ball-5 {
+  background: url("ellipse-grey_about.18b53ff2.png");
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 30px;
+  bottom: calc(50% - 100px);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.section-about__ball-5::before {
+  content: "CONTACTS";
+  position: absolute;
+  width: 70px;
+  height: 25px;
+  background: #d9d9d9;
+  padding: 5px;
+  padding-right: 15px;
+  left: -70px;
+  top: 0;
+  font-family: "Pavanam";
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: #cf8349;
+  z-index: 90;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-transform: scale(0) translateX(-200px);
+          transform: scale(0) translateX(-200px);
+}
+.section-about #home:hover,
+.section-about #about:hover,
+.section-about #trainers:hover,
+.section-about #prices:hover,
+.section-about #contacts:hover {
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000;
 }

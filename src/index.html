@@ -7,17 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <section class="section section-home">
+    
+    <section class="section section-home" id="home">
       <div class="section-home__star"></div>
 
       <div class="section-home__nav">
         <!-- logo-import -->
 
         <div class="section-home__menu">
-          <a>ABOUT</a>
-          <a>TRAINERS</a>
-          <a>PRICE</a>
-          <a>CONTACTS</a>
+          <a href="#about">ABOUT</a>
+          <a href="#trainers">TRAINERS</a>
+          <a href="#price">PRICE</a>
+          <a href="#contacts">CONTACTS</a>
         </div>
       </div>
 
@@ -25,7 +26,7 @@
         <div class="section-home__content-heading">
           <h1>
             BUILD <br />
-            YOUR BODY
+            YOUR BODY   
           </h1>
         </div>
         <div class="section-home__content-text">
@@ -34,31 +35,41 @@
             well you will age. Maintaining fitness through good nutrition and
             exercise promotes efficient circulation, digestion and
             musculoskeletal strength. This allows you to live an active life,
-            and a healthy immune system helps you ward off disease
+              and a healthy immune system helps you ward off disease
           </p>
         </div>
 
         <button type="button" class="section-home__button">
-          Read more
+          Read more <span><img src="./assets/chevron_home.svg" alt="arrow" class="section-home__arrow"></span>
         </button>
       </div>
     </section>
 
-    <section class="section section-about">
-      <div class="section-about__navigation-wheel">
+    <section id="about" class="section section-about">
         <div class="section-about__vector-1"></div>
-
+      <div class="section-about__navigation-wheel">
+      
         <div class="section-about__wheel"></div>
-        <div class="section-about__ball-1"></div>
+        <a href="#home">
+            <div class="section-about__ball-1"></div>
+        </a>
+        <a href="#about">
         <div class="section-about__ball-2"></div>
+      </a>
+      <a href="#trainers">
         <div class="section-about__ball-3"></div>
+      </a>
+      <a href="#price">
         <div class="section-about__ball-4"></div>
+      </a>
+      <a href="#contacts">
         <div class="section-about__ball-5"></div>
+      </a>
       </div>
       <div class="section-about__vector-2"></div>
     </section>
 
-    <section class="section section-trainers">
+    <section class="section section-trainers" id="trainers">
       <h1>WE ARE HERE TO GUIDE YOU</h1>
       <p class="section-trainers__paragraph">
         Team of experts trainers are always here to guide and support you. Get
@@ -89,7 +100,7 @@
       </div>
     </section>
 
-    <section class="section section-price">
+    <section class="section section-price"  id="price">
       <div class="section-price__dotted-overlay"></div>
       <div class="section-price__container">
         <div class="section-price__heading-container">
@@ -213,12 +224,13 @@
       </div>
     </section>
 
-    <section class="section section-contacts">
+    <section class="section section-contacts"  id="contacts">
+
       <div class="section-contacts__images">
         <div class="section-contacts__image">
           <img src="./assets/triagle 1.png" alt="picture">
         </div>
-        <div class="section-contacts__image section-contacts__image-2">
+        <div class="section-contacts__image section-contacts__image-mid">
             <img src="./assets/triangle 3.png" alt="picture">
             
           </div>
@@ -226,6 +238,7 @@
               <img src="./assets/triangle 2.png" alt="picture">
             </div>
       </div>
+
       <div class="section-contacts__content">
         <img src="./assets/map_contacts.png" alt="" />
         <p>
