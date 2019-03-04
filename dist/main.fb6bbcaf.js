@@ -300,8 +300,7 @@ var _os = require("os");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
-
+//imports
 //fonts
 var newStyle = document.createElement("style");
 newStyle.appendChild(document.createTextNode("\
@@ -485,7 +484,7 @@ window.addEventListener("scroll", function () {
     if (bgFlag !== "about") {
       var styleBg = document.head.appendChild(document.createElement("style"));
       styleBg.innerHTML = ".section-about__ball-1::before {background: #d9d9d9;}.section-about__ball-2::before {background: #fff;}.section-about__ball-3::before {background: #d9d9d9;}.section-about__ball-4::before {background: #d9d9d9;}.section-about__ball-5::before {background: #d9d9d9;}";
-      bgFlag = (_readOnlyError("bgFlag"), "about");
+      bgFlag = "about";
     }
   } //if user is over home section
   else if (scrollTop < sectionAboutH - 200) {
@@ -523,7 +522,7 @@ window.addEventListener("scroll", function () {
         var _styleBg = document.head.appendChild(document.createElement("style"));
 
         _styleBg.innerHTML = ".section-about__ball-1::before {background: #fff;}.section-about__ball-2::before {background: #d9d9d9;}.section-about__ball-3::before {background: #d9d9d9;}.section-about__ball-4::before {background: #d9d9d9;}.section-about__ball-5::before {background: #d9d9d9;}";
-        bgFlag = (_readOnlyError("bgFlag"), "home");
+        bgFlag = "home";
       }
     } //if user is over trainers section
     else if (scrollTop >= sectionHomeH + sectionAboutH - 200 && scrollTop < sectionAboutH + sectionHomeH + sectionPriceH - 200) {
@@ -561,7 +560,7 @@ window.addEventListener("scroll", function () {
           var _styleBg2 = document.head.appendChild(document.createElement("style"));
 
           _styleBg2.innerHTML = ".section-about__ball-1::before {background: #d9d9d9;}.section-about__ball-2::before {background: #d9d9d9;}.section-about__ball-3::before {background: #fff;}.section-about__ball-4::before {background: #d9d9d9;}.section-about__ball-5::before {background: #d9d9d9;}";
-          bgFlag = (_readOnlyError("bgFlag"), "trainers");
+          bgFlag = "trainers";
         }
       } //if user is over price section
       else if (scrollTop >= sectionHomeH + sectionAboutH + sectionPriceH - 200 && scrollTop < sectionAboutH + sectionHomeH + sectionPriceH + sectionContactsH - 200) {
@@ -599,7 +598,7 @@ window.addEventListener("scroll", function () {
             var _styleBg3 = document.head.appendChild(document.createElement("style"));
 
             _styleBg3.innerHTML = ".section-about__ball-1::before {background: #d9d9d9;}.section-about__ball-2::before {background: #d9d9d9;}.section-about__ball-3::before {background: #d9d9d9;}.section-about__ball-4::before {background: #fff;}.section-about__ball-5::before {background: #d9d9d9;}";
-            bgFlag = (_readOnlyError("bgFlag"), "price");
+            bgFlag = "price";
           }
         } //if user is over contacts section
         else if (scrollTop > sectionAboutH + sectionHomeH + sectionPriceH + sectionContactsH - 200) {
@@ -637,10 +636,91 @@ window.addEventListener("scroll", function () {
               var _styleBg4 = document.head.appendChild(document.createElement("style"));
 
               _styleBg4.innerHTML = ".section-about__ball-1::before {background: #d9d9d9;}.section-about__ball-2::before {background: #d9d9d9;}.section-about__ball-3::before {background: #d9d9d9;}.section-about__ball-4::before {background: #d9d9d9;}.section-about__ball-5::before {background: #fff;}";
-              bgFlag = (_readOnlyError("bgFlag"), "contacts");
+              bgFlag = "contacts";
             }
           }
+}); //content slide effects
+
+var slideEffect = function slideEffect() {
+  var sectionHomeH = document.querySelector("#home").offsetHeight;
+  var sectionAboutH = document.querySelector("#about").offsetHeight;
+  var sectionTrainersH = document.querySelector("#trainers").offsetHeight;
+  var sectionPriceH = document.querySelector("#price").offsetHeight;
+  var scrollTop = window.pageYOffset !== undefined ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop; //about
+
+  if (scrollTop > sectionHomeH - 300) {
+    var elem = document.querySelector(".section-about__heading");
+    elem.style.transform = "translateY(0)";
+    var elem2 = document.querySelector(".section-about__container");
+    elem2.style.transform = "translateY(0)";
+  } //trainers
+
+
+  if (scrollTop > sectionHomeH + sectionAboutH - 300) {
+    var _elem = document.querySelector(".section-trainers__paragraph");
+
+    _elem.style.transform = "translateY(0)";
+
+    var _elem2 = document.querySelector(".section-trainers h1");
+
+    _elem2.style.transform = "translateY(0)";
+    var elem3 = document.querySelector(".section-trainers__pictures-container");
+    elem3.style.transform = "translateY(0)";
+  } //price + three free images
+
+
+  if (scrollTop > sectionHomeH + sectionAboutH + sectionTrainersH - 300) {
+    var _elem3 = document.querySelector(".section-price__heading-container");
+
+    _elem3.style.transform = "translateY(0)";
+
+    var _elem4 = document.querySelector(".section-price__people-container");
+
+    _elem4.style.transform = "translateY(0)";
+
+    var _elem5 = document.querySelector(".section-price__boxes-labels");
+
+    _elem5.style.transform = "translateY(0)";
+    var elem4 = document.querySelector(".section-price__boxes");
+    elem4.style.transform = "translateY(0)";
+    var elem5 = document.querySelectorAll(".section-contacts__image");
+    elem5[0].style.transform = "translateY(0)";
+    elem5[1].style.transform = "translateY(0)";
+    elem5[2].style.transform = "translateY(0)";
+  } //contacts
+
+
+  if (scrollTop > sectionHomeH + sectionAboutH + sectionTrainersH + sectionPriceH - 300) {
+    var _elem6 = document.querySelector(".section-contacts__content img");
+
+    _elem6.style.transform = "translatex(0)";
+
+    var _elem7 = document.querySelector(".section-contacts__content p");
+
+    _elem7.style.transform = "translatex(0)";
+  }
+};
+
+window.addEventListener("scroll", function () {
+  slideEffect();
 });
+slideEffect(); //trainers onmouseover effect
+
+var trainer = document.querySelectorAll(".section-trainers__trainer");
+
+for (var _i = 0; _i < trainer.length; _i++) {
+  trainer[_i].addEventListener("mouseover", function (e) {
+    e.target.style.opacity = 0.6;
+    e.target.parentNode.style.filter = "blur(2px)";
+  });
+}
+
+for (var _i2 = 0; _i2 < trainer.length; _i2++) {
+  trainer[_i2].addEventListener("mouseout", function (e) {
+    e.target.style.opacity = 0;
+    e.target.parentNode.style.filter = "blur(0px)";
+  });
+}
 },{"../sass/style.scss":"sass/style.scss","../sass/menu.scss":"sass/menu.scss","../sass/button.scss":"sass/button.scss","../sass/scroll.scss":"sass/scroll.scss","../sass/wheel.scss":"sass/wheel.scss","../assets/logo_home.png":"assets/logo_home.png","../assets/star_home.svg":"assets/star_home.svg","../assets/man_home.png":"assets/man_home.png","../assets/chevron_home.svg":"assets/chevron_home.svg","../assets/heading_about.png":"assets/heading_about.png","../assets/fonts/Pavanam.ttf":"assets/fonts/Pavanam.ttf","../assets/fonts/PaytoneOne.ttf":"assets/fonts/PaytoneOne.ttf","../assets/ellipse-grey_about.png":"assets/ellipse-grey_about.png","../assets/ellipse-orange_about.png":"assets/ellipse-orange_about.png","os":"../node_modules/os-browserify/browser.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -668,7 +748,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63282" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49426" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

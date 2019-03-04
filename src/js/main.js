@@ -222,7 +222,7 @@ homeDot5.addEventListener("mouseout", () => {
 });
 
 //change the dot color down to active section
-const bgFlag = "";
+let bgFlag = "";
 window.addEventListener("scroll", () => {
   const sectionHomeH = document.querySelector("#home").offsetHeight;
   const sectionAboutH = document.querySelector("#about").offsetHeight;
@@ -431,3 +431,91 @@ window.addEventListener("scroll", () => {
     }
   }
 });
+
+//content slide effects
+const slideEffect = () => {
+  const sectionHomeH = document.querySelector("#home").offsetHeight;
+  const sectionAboutH = document.querySelector("#about").offsetHeight;
+  const sectionTrainersH = document.querySelector("#trainers").offsetHeight;
+  const sectionPriceH = document.querySelector("#price").offsetHeight;
+  const scrollTop =
+    window.pageYOffset !== undefined
+      ? window.pageYOffset
+      : (document.documentElement || document.body.parentNode || document.body)
+          .scrollTop;
+
+  //about
+  if (scrollTop > sectionHomeH - 300) {
+    const elem = document.querySelector(".section-about__heading");
+    elem.style.transform = "translateY(0)";
+
+    const elem2 = document.querySelector(".section-about__container");
+    elem2.style.transform = "translateY(0)";
+  }
+  //trainers
+  if (scrollTop > sectionHomeH + sectionAboutH - 300) {
+    const elem = document.querySelector(".section-trainers__paragraph");
+    elem.style.transform = "translateY(0)";
+
+    const elem2 = document.querySelector(".section-trainers h1");
+    elem2.style.transform = "translateY(0)";
+
+    const elem3 = document.querySelector(
+      ".section-trainers__pictures-container"
+    );
+    elem3.style.transform = "translateY(0)";
+  }
+  //price + three free images
+  if (scrollTop > sectionHomeH + sectionAboutH + sectionTrainersH - 300) {
+    const elem = document.querySelector(".section-price__heading-container");
+    elem.style.transform = "translateY(0)";
+
+    const elem2 = document.querySelector(".section-price__people-container");
+    elem2.style.transform = "translateY(0)";
+
+    const elem3 = document.querySelector(".section-price__boxes-labels");
+    elem3.style.transform = "translateY(0)";
+
+    const elem4 = document.querySelector(".section-price__boxes");
+    elem4.style.transform = "translateY(0)";
+
+    const elem5 = document.querySelectorAll(".section-contacts__image");
+    elem5[0].style.transform = "translateY(0)";
+    elem5[1].style.transform = "translateY(0)";
+    elem5[2].style.transform = "translateY(0)";
+  }
+  //contacts
+  if (
+    scrollTop >
+    sectionHomeH + sectionAboutH + sectionTrainersH + sectionPriceH - 300
+  ) {
+    const elem = document.querySelector(".section-contacts__content img");
+    elem.style.transform = "translatex(0)";
+
+    const elem2 = document.querySelector(".section-contacts__content p");
+    elem2.style.transform = "translatex(0)";
+  }
+};
+window.addEventListener("scroll", () => {
+  slideEffect();
+});
+
+slideEffect();
+
+//trainers onmouseover effect
+
+const trainer = document.querySelectorAll(".section-trainers__trainer");
+
+for (let i = 0; i < trainer.length; i++) {
+  trainer[i].addEventListener("mouseover", e => {
+    e.target.style.opacity = 0.6;
+    e.target.parentNode.style.filter = "blur(2px)";
+  });
+}
+
+for (let i = 0; i < trainer.length; i++) {
+  trainer[i].addEventListener("mouseout", e => {
+    e.target.style.opacity = 0;
+    e.target.parentNode.style.filter = "blur(0px)";
+  });
+}
