@@ -12,6 +12,8 @@ import scroll from "../assets/chevron_home.svg";
 import headingAbout from "../assets/heading_about.png";
 import pavanam from "../assets/fonts/Pavanam.ttf";
 import paytone from "../assets/fonts/PaytoneOne.ttf";
+import post from "../assets/fonts/post.ttf";
+import PatuaOne from "../assets/fonts/PatuaOne.ttf";
 import grey from "../assets/ellipse-grey_about.png";
 import orange from "../assets/ellipse-orange_about.png";
 import { homedir } from "os";
@@ -42,6 +44,34 @@ newStyle.appendChild(
       ";\
       src: url('" +
       paytone +
+      "') format('truetype');\
+  }\
+  "
+  )
+);
+newStyle.appendChild(
+  document.createTextNode(
+    "\
+  @font-face {\
+      font-family: " +
+      "Post" +
+      ";\
+      src: url('" +
+      post +
+      "') format('truetype');\
+  }\
+  "
+  )
+);
+newStyle.appendChild(
+  document.createTextNode(
+    "\
+  @font-face {\
+      font-family: " +
+      "PatuaOne" +
+      ";\
+      src: url('" +
+      PatuaOne +
       "') format('truetype');\
   }\
   "
@@ -504,12 +534,53 @@ slideEffect();
 
 //trainers onmouseover effect
 
+//check opacity on overlay and hide/show description
+const checkOpacity = () => {
+  const a = document.querySelector("#trainer1");
+  const b = document.querySelector("#trainer2");
+  const c = document.querySelector("#trainer3");
+  const d = document.querySelector("#trainer4");
+
+  if (a.style.opacity === "0.6") {
+    document.querySelector(".section-trainers__description-1").style.opacity =
+      "1";
+  } else if (a.style.opacity === "0") {
+    document.querySelector(".section-trainers__description-1").style.opacity =
+      "0";
+  }
+
+  if (b.style.opacity === "0.6") {
+    document.querySelector(".section-trainers__description-2").style.opacity =
+      "1";
+  } else if (b.style.opacity === "0") {
+    document.querySelector(".section-trainers__description-2").style.opacity =
+      "0";
+  }
+
+  if (c.style.opacity === "0.6") {
+    document.querySelector(".section-trainers__description-3").style.opacity =
+      "1";
+  } else if (c.style.opacity === "0") {
+    document.querySelector(".section-trainers__description-3").style.opacity =
+      "0";
+  }
+
+  if (d.style.opacity === "0.6") {
+    document.querySelector(".section-trainers__description-4").style.opacity =
+      "1";
+  } else if (d.style.opacity === "0") {
+    document.querySelector(".section-trainers__description-4").style.opacity =
+      "0";
+  }
+};
+
 const trainer = document.querySelectorAll(".section-trainers__trainer");
 
 for (let i = 0; i < trainer.length; i++) {
   trainer[i].addEventListener("mouseover", e => {
     e.target.style.opacity = 0.6;
     e.target.parentNode.style.filter = "blur(2px)";
+    checkOpacity();
   });
 }
 
@@ -517,5 +588,61 @@ for (let i = 0; i < trainer.length; i++) {
   trainer[i].addEventListener("mouseout", e => {
     e.target.style.opacity = 0;
     e.target.parentNode.style.filter = "blur(0px)";
+    checkOpacity();
   });
 }
+
+//Enable on/off when user over the description text
+const trainerDes1 = document.querySelector(".section-trainers__description-1");
+const trainerDes2 = document.querySelector(".section-trainers__description-2");
+const trainerDes3 = document.querySelector(".section-trainers__description-3");
+const trainerDes4 = document.querySelector(".section-trainers__description-4");
+
+//description1
+trainerDes1.addEventListener("mouseover", () => {
+  document.querySelector("#trainer1").style.opacity = 0.6;
+  document.querySelector("#trainer1").parentNode.style.filter = "blur(2px)";
+  checkOpacity();
+});
+
+trainerDes1.addEventListener("mouseout", e => {
+  document.querySelector("#trainer1").style.opacity = 0;
+  document.querySelector("#trainer1").parentNode.style.filter = "blur(0px)";
+  checkOpacity();
+});
+//description2
+trainerDes2.addEventListener("mouseover", () => {
+  document.querySelector("#trainer2").style.opacity = 0.6;
+  document.querySelector("#trainer2").parentNode.style.filter = "blur(2px)";
+  checkOpacity();
+});
+
+trainerDes2.addEventListener("mouseout", e => {
+  document.querySelector("#trainer2").style.opacity = 0;
+  document.querySelector("#trainer2").parentNode.style.filter = "blur(0px)";
+  checkOpacity();
+});
+//description3
+trainerDes3.addEventListener("mouseover", () => {
+  document.querySelector("#trainer3").style.opacity = 0.6;
+  document.querySelector("#trainer3").parentNode.style.filter = "blur(2px)";
+  checkOpacity();
+});
+
+trainerDes3.addEventListener("mouseout", e => {
+  document.querySelector("#trainer3").style.opacity = 0;
+  document.querySelector("#trainer3").parentNode.style.filter = "blur(0px)";
+  checkOpacity();
+});
+//description4
+trainerDes4.addEventListener("mouseover", () => {
+  document.querySelector("#trainer4").style.opacity = 0.6;
+  document.querySelector("#trainer4").parentNode.style.filter = "blur(2px)";
+  checkOpacity();
+});
+
+trainerDes4.addEventListener("mouseout", e => {
+  document.querySelector("#trainer4").style.opacity = 0;
+  document.querySelector("#trainer4").parentNode.style.filter = "blur(0px)";
+  checkOpacity();
+});

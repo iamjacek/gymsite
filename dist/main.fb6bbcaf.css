@@ -270,6 +270,7 @@ body {
   margin: 0;
 }
 .section-trainers__content-overlay {
+  text-align: center;
   position: absolute;
   opacity: 0.6;
   width: 100%;
@@ -283,6 +284,60 @@ body {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+}
+.section-trainers__description {
+  text-align: center;
+  position: absolute;
+  width: 25%;
+  height: 20%;
+  z-index: 1000;
+  left: 25%;
+  top: 35%;
+  color: #fff;
+  display: inline-block;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.section-trainers__description h3 {
+  font-family: "Post";
+  font-size: 3.5rem;
+  padding: 40px;
+  margin: 0;
+  line-height: 3.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.section-trainers__description h4 {
+  font-family: "PatuaOne";
+  margin-top: 10px;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.section-trainers__description h5 {
+  font-family: "PatuaOne";
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #d2d2d2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.section-trainers__description-1 {
+  left: 0;
+  opacity: 0;
+}
+.section-trainers__description-2 {
+  left: 25%;
+  opacity: 0;
+}
+.section-trainers__description-3 {
+  left: 50%;
+  opacity: 0;
+}
+.section-trainers__description-4 {
+  left: 75%;
+  opacity: 0;
 }
 .section-trainers__trainer {
   padding: 0;
