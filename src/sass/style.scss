@@ -27,6 +27,19 @@ body {
   margin: 0 auto;
 }
 
+//state to hamburger menu
+.section-home__line1.change {
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.section-home__line2.change {
+  opacity: 0;
+}
+
+.section-home__line3.change {
+  transform: rotate(45deg) translate(-9px, -9px);
+}
+
 //***********************************************************************
 //***********************************************************************
 
@@ -38,10 +51,39 @@ body {
   background-image: linear-gradient($color-2 -80%, $color-1);
   overflow: hidden;
 
+  &__hamburger-menu {
+    width: 40px;
+    height: 50px;
+    position: fixed;
+    top: 35px;
+    right: 25px;
+    cursor: pointer;
+    display: inline-block;
+    z-index: 10000;
+  }
+
+  &__line1,
+  &__line2,
+  &__line3 {
+    width: 40px;
+    height: 4px;
+    background-color: #fff;
+    margin: 7px 0;
+    transition: 0.4s;
+  }
+
   &__star {
     position: absolute;
     bottom: -40%;
     right: 0;
+    width: calc(75% + 100px);
+    z-index: 0;
+  }
+
+  &__star-img {
+    position: absolute;
+    bottom: 180px;
+    right: -130px;
     width: calc(75% + 100px);
     z-index: 0;
   }
@@ -68,6 +110,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1000;
+    transition: all 0.4s ease-in;
 
     a {
       @include sfont;
@@ -615,6 +659,115 @@ body {
 }
 
 //STANDARD QUERIES <--------------------------
+@media only screen and (min-width: 800px) {
+  .section-home__hamburger-menu {
+    display: none;
+  }
+}
+@media only screen and (max-width: 799px) {
+  .section-home {
+    &__menu {
+      display: none;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 250px;
+      margin: 20px;
+      background: $color-4;
+      a {
+        display: block;
+        text-align: center;
+      }
+    }
+    &__star {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+    }
+    &__star-img {
+      position: absolute;
+      top: -20px;
+      left: -120px;
+      width: 120%;
+      margin: 0 auto;
+      max-width: 600px;
+      min-width: 550px;
+      z-index: 0;
+    }
+    &__man-picture {
+      position: absolute;
+      bottom: 61%;
+      left: calc(50% - 125px);
+      width: 250px;
+    }
+
+    &__logo {
+      margin: auto;
+    }
+    &__link-scroll {
+      display: none;
+    }
+    &__content {
+      height: 50%;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+    }
+    &__content-heading {
+      h1 {
+        padding-top: 40px;
+        font-size: 38px;
+        line-height: 42px;
+        text-align: center;
+      }
+    }
+    &__content-text {
+      text-align: center;
+      width: 80%;
+      margin: 20px auto;
+      p {
+        font-size: 17px;
+        line-height: 19px;
+        text-align: center;
+      }
+    }
+  }
+  .section-about {
+    &__navigation-wheel {
+      a {
+        display: none;
+      }
+    }
+    &__vector-1 {
+      display: none;
+    }
+    &__vector-2 {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      left: 0;
+      bottom: 0;
+      background-position-x: -130px;
+      background-position-y: 200px;
+      background-size: cover;
+    }
+  }
+  .section-trainers {
+    h1 {
+      font-size: 3rem;
+      margin: 5%;
+    }
+  }
+  .section-price__decoration {
+    transform: scale(0.6);
+    bottom: -115px;
+    left: -20px;
+  }
+}
+
 @media only screen and (max-width: 1399px) {
   .section-trainers {
     h1 {
@@ -651,19 +804,5 @@ body {
     font-size: 1rem;
     padding-top: 25px;
     padding-right: 15px;
-  }
-}
-
-@media only screen and (max-width: 799px) {
-  .section-trainers {
-    h1 {
-      font-size: 3rem;
-      margin: 5%;
-    }
-  }
-  .section-price__decoration {
-    transform: scale(0.6);
-    bottom: -115px;
-    left: -20px;
   }
 }

@@ -341,7 +341,7 @@ var i = document.getElementsByClassName("section-home__star");
 var c = document.createElement("img");
 c.src = _star_home.default;
 c.alt = "start background image";
-c.className = "section-home__star";
+c.className = "section-home__star-img";
 i[0].appendChild(c);
 var b = document.createElement("img");
 b.src = _man_home.default;
@@ -379,10 +379,7 @@ var secAbout = document.getElementsByClassName("section-about");
 var imgHead = document.createElement("img");
 imgHead.src = _heading_about.default;
 imgHead.alt = "heading picture";
-imgHead.className = "section-about__heading"; // //images trainers SECTION
-// const secTrainers = document.getElementsByClassName('section-trainers')
-// secTrainers[0].style.backgroundImage = `url(${backgroundTrainers})`;
-//text content for about sec
+imgHead.className = "section-about__heading"; //text content for about sec
 
 var parCont = document.createElement("p");
 parCont.className = "section-about__container";
@@ -824,7 +821,50 @@ trainerDes4.addEventListener("mouseout", function (e) {
   document.querySelector("#trainer4").style.opacity = 0;
   document.querySelector("#trainer4").parentNode.style.filter = "blur(0px)";
   checkOpacity();
-});
+}); //remove new line if screen is narrow in heading section home
+
+var replaceHeadHome = function replaceHeadHome() {
+  var headHome = document.querySelector("#home-header");
+
+  if (window.innerWidth < 800) {
+    headHome.innerHTML = "BUILD YOUR BODY";
+    console.log("this is resized and header have NO break line");
+  } else {
+    headHome.innerHTML = "BUILD <br />YOUR BODY";
+    console.log("this is resized and header have a break line");
+  }
+};
+
+window.addEventListener("resize", replaceHeadHome); //MENU on mobile devices (phone and tablet)
+
+function toggleMenu() {
+  var line1 = document.querySelector(".section-home__line1");
+  var line2 = document.querySelector(".section-home__line2");
+  var line3 = document.querySelector(".section-home__line3");
+  line1.classList.toggle("change");
+  line2.classList.toggle("change");
+  line3.classList.toggle("change");
+  toggleMenuLinks();
+}
+
+var hamMenu = document.querySelector(".section-home__hamburger-menu");
+hamMenu.addEventListener("click", toggleMenu);
+
+function toggleMenuLinks() {
+  if (document.querySelector(".section-home__menu").style.display !== "block") {
+    document.querySelector(".section-home__menu").style.display = "block";
+    document.querySelector(".section-home__menu").style.visibility = "visible";
+  } else {
+    document.querySelector(".section-home__menu").style.display = "none";
+    document.querySelector(".section-home__menu").style.visibility = "hidden";
+  }
+}
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 800) {
+    document.querySelector(".section-home__menu").removeAttribute("style");
+  }
+}); //show content on click menu button
 },{"../sass/style.scss":"sass/style.scss","../sass/menu.scss":"sass/menu.scss","../sass/button.scss":"sass/button.scss","../sass/scroll.scss":"sass/scroll.scss","../sass/wheel.scss":"sass/wheel.scss","../assets/logo_home.png":"assets/logo_home.png","../assets/star_home.svg":"assets/star_home.svg","../assets/man_home.png":"assets/man_home.png","../assets/chevron_home.svg":"assets/chevron_home.svg","../assets/heading_about.png":"assets/heading_about.png","../assets/fonts/Pavanam.ttf":"assets/fonts/Pavanam.ttf","../assets/fonts/PaytoneOne.ttf":"assets/fonts/PaytoneOne.ttf","../assets/fonts/post.ttf":"assets/fonts/post.ttf","../assets/fonts/PatuaOne.ttf":"assets/fonts/PatuaOne.ttf","../assets/ellipse-grey_about.png":"assets/ellipse-grey_about.png","../assets/ellipse-orange_about.png":"assets/ellipse-orange_about.png","os":"../node_modules/os-browserify/browser.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -852,7 +892,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49435" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50958" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

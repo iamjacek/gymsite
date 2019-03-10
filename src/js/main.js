@@ -85,7 +85,7 @@ const i = document.getElementsByClassName("section-home__star");
 const c = document.createElement("img");
 c.src = star;
 c.alt = "start background image";
-c.className = "section-home__star";
+c.className = "section-home__star-img";
 i[0].appendChild(c);
 
 const b = document.createElement("img");
@@ -130,10 +130,6 @@ const imgHead = document.createElement("img");
 imgHead.src = headingAbout;
 imgHead.alt = "heading picture";
 imgHead.className = "section-about__heading";
-
-// //images trainers SECTION
-// const secTrainers = document.getElementsByClassName('section-trainers')
-// secTrainers[0].style.backgroundImage = `url(${backgroundTrainers})`;
 
 //text content for about sec
 const parCont = document.createElement("p");
@@ -646,3 +642,47 @@ trainerDes4.addEventListener("mouseout", e => {
   document.querySelector("#trainer4").parentNode.style.filter = "blur(0px)";
   checkOpacity();
 });
+
+//remove new line if screen is narrow in heading section home
+const replaceHeadHome = () => {
+  const headHome = document.querySelector("#home-header");
+  if (window.innerWidth < 800) {
+    headHome.innerHTML = "BUILD YOUR BODY";
+    console.log("this is resized and header have NO break line");
+  } else {
+    headHome.innerHTML = "BUILD <br />YOUR BODY";
+    console.log("this is resized and header have a break line");
+  }
+};
+window.addEventListener("resize", replaceHeadHome);
+
+//MENU on mobile devices (phone and tablet)
+
+function toggleMenu() {
+  const line1 = document.querySelector(".section-home__line1");
+  const line2 = document.querySelector(".section-home__line2");
+  const line3 = document.querySelector(".section-home__line3");
+  line1.classList.toggle("change");
+  line2.classList.toggle("change");
+  line3.classList.toggle("change");
+  toggleMenuLinks();
+}
+
+const hamMenu = document.querySelector(".section-home__hamburger-menu");
+hamMenu.addEventListener("click", toggleMenu);
+
+function toggleMenuLinks() {
+  if (document.querySelector(".section-home__menu").style.display !== "block") {
+    document.querySelector(".section-home__menu").style.display = "block";
+    document.querySelector(".section-home__menu").style.visibility = "visible";
+  } else {
+    document.querySelector(".section-home__menu").style.display = "none";
+    document.querySelector(".section-home__menu").style.visibility = "hidden";
+  }
+}
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 800) {
+    document.querySelector(".section-home__menu").removeAttribute("style");
+  }
+});
+//show content on click menu button
