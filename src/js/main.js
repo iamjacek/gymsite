@@ -5,11 +5,15 @@ import menu from "../sass/menu.scss";
 import button from "../sass/button.scss";
 import scrollStyle from "../sass/scroll.scss";
 import wheelStyle from "../sass/wheel.scss";
+import mediaQ from "../sass/mediaqueries.scss";
+import headerPriceMobile from "../assets/heading_price-mobile.png";
+import headerPrice from "../assets/heading_price.png";
 import img from "../assets/logo_home.png";
 import star from "../assets/star_home.svg";
 import man from "../assets/man_home.png";
 import scroll from "../assets/chevron_home.svg";
 import headingAbout from "../assets/heading_about.png";
+import headingAbout2 from "../assets/heading-about-mobile.png";
 import pavanam from "../assets/fonts/Pavanam.ttf";
 import paytone from "../assets/fonts/PaytoneOne.ttf";
 import post from "../assets/fonts/post.ttf";
@@ -127,12 +131,21 @@ alink.appendChild(scrollHomePageInd3);
 // images ABOUT SEC
 const secAbout = document.getElementsByClassName("section-about");
 const imgHead = document.createElement("img");
-imgHead.src = headingAbout;
+
+const replaceImage = () => {
+  if (window.innerWidth < 800) {
+    imgHead.src = headingAbout2;
+  } else {
+    imgHead.src = headingAbout;
+  }
+};
+window.addEventListener("resize", replaceImage);
+replaceImage();
 imgHead.alt = "heading picture";
 imgHead.className = "section-about__heading";
 
 //text content for about sec
-const parCont = document.createElement("p");
+const parCont = document.createElement("div");
 parCont.className = "section-about__container";
 const par = document.createElement("p");
 par.innerHTML =
@@ -531,129 +544,141 @@ slideEffect();
 //trainers onmouseover effect
 
 //check opacity on overlay and hide/show description
-const checkOpacity = () => {
-  const a = document.querySelector("#trainer1");
-  const b = document.querySelector("#trainer2");
-  const c = document.querySelector("#trainer3");
-  const d = document.querySelector("#trainer4");
+if (window.innerWidth > 800) {
+  const checkOpacity = () => {
+    const a = document.querySelector("#trainer1");
+    const b = document.querySelector("#trainer2");
+    const c = document.querySelector("#trainer3");
+    const d = document.querySelector("#trainer4");
 
-  if (a.style.opacity === "0.6") {
-    document.querySelector(".section-trainers__description-1").style.opacity =
-      "1";
-  } else if (a.style.opacity === "0") {
-    document.querySelector(".section-trainers__description-1").style.opacity =
-      "0";
+    if (a.style.opacity === "0.6") {
+      document.querySelector(".section-trainers__description-1").style.opacity =
+        "1";
+    } else if (a.style.opacity === "0") {
+      document.querySelector(".section-trainers__description-1").style.opacity =
+        "0";
+    }
+
+    if (b.style.opacity === "0.6") {
+      document.querySelector(".section-trainers__description-2").style.opacity =
+        "1";
+    } else if (b.style.opacity === "0") {
+      document.querySelector(".section-trainers__description-2").style.opacity =
+        "0";
+    }
+
+    if (c.style.opacity === "0.6") {
+      document.querySelector(".section-trainers__description-3").style.opacity =
+        "1";
+    } else if (c.style.opacity === "0") {
+      document.querySelector(".section-trainers__description-3").style.opacity =
+        "0";
+    }
+
+    if (d.style.opacity === "0.6") {
+      document.querySelector(".section-trainers__description-4").style.opacity =
+        "1";
+    } else if (d.style.opacity === "0") {
+      document.querySelector(".section-trainers__description-4").style.opacity =
+        "0";
+    }
+  };
+
+  const trainer = document.querySelectorAll(".section-trainers__trainer");
+
+  for (let i = 0; i < trainer.length; i++) {
+    trainer[i].addEventListener("mouseover", e => {
+      e.target.style.opacity = 0.6;
+      e.target.parentNode.style.filter = "blur(2px)";
+      checkOpacity();
+    });
   }
 
-  if (b.style.opacity === "0.6") {
-    document.querySelector(".section-trainers__description-2").style.opacity =
-      "1";
-  } else if (b.style.opacity === "0") {
-    document.querySelector(".section-trainers__description-2").style.opacity =
-      "0";
+  for (let i = 0; i < trainer.length; i++) {
+    trainer[i].addEventListener("mouseout", e => {
+      e.target.style.opacity = 0;
+      e.target.parentNode.style.filter = "blur(0px)";
+      checkOpacity();
+    });
   }
 
-  if (c.style.opacity === "0.6") {
-    document.querySelector(".section-trainers__description-3").style.opacity =
-      "1";
-  } else if (c.style.opacity === "0") {
-    document.querySelector(".section-trainers__description-3").style.opacity =
-      "0";
-  }
+  //Enable on/off when user over the description text
+  const trainerDes1 = document.querySelector(
+    ".section-trainers__description-1"
+  );
+  const trainerDes2 = document.querySelector(
+    ".section-trainers__description-2"
+  );
+  const trainerDes3 = document.querySelector(
+    ".section-trainers__description-3"
+  );
+  const trainerDes4 = document.querySelector(
+    ".section-trainers__description-4"
+  );
 
-  if (d.style.opacity === "0.6") {
-    document.querySelector(".section-trainers__description-4").style.opacity =
-      "1";
-  } else if (d.style.opacity === "0") {
-    document.querySelector(".section-trainers__description-4").style.opacity =
-      "0";
-  }
-};
+  //description1
+  trainerDes1.addEventListener("mouseover", () => {
+    document.querySelector("#trainer1").style.opacity = 0.6;
+    document.querySelector("#trainer1").parentNode.style.filter = "blur(2px)";
+    checkOpacity();
+  });
 
-const trainer = document.querySelectorAll(".section-trainers__trainer");
+  trainerDes1.addEventListener("mouseout", e => {
+    document.querySelector("#trainer1").style.opacity = 0;
+    document.querySelector("#trainer1").parentNode.style.filter = "blur(0px)";
+    checkOpacity();
+  });
+  //description2
+  trainerDes2.addEventListener("mouseover", () => {
+    document.querySelector("#trainer2").style.opacity = 0.6;
+    document.querySelector("#trainer2").parentNode.style.filter = "blur(2px)";
+    checkOpacity();
+  });
 
-for (let i = 0; i < trainer.length; i++) {
-  trainer[i].addEventListener("mouseover", e => {
-    e.target.style.opacity = 0.6;
-    e.target.parentNode.style.filter = "blur(2px)";
+  trainerDes2.addEventListener("mouseout", e => {
+    document.querySelector("#trainer2").style.opacity = 0;
+    document.querySelector("#trainer2").parentNode.style.filter = "blur(0px)";
+    checkOpacity();
+  });
+  //description3
+  trainerDes3.addEventListener("mouseover", () => {
+    document.querySelector("#trainer3").style.opacity = 0.6;
+    document.querySelector("#trainer3").parentNode.style.filter = "blur(2px)";
+    checkOpacity();
+  });
+
+  trainerDes3.addEventListener("mouseout", e => {
+    document.querySelector("#trainer3").style.opacity = 0;
+    document.querySelector("#trainer3").parentNode.style.filter = "blur(0px)";
+    checkOpacity();
+  });
+  //description4
+  trainerDes4.addEventListener("mouseover", () => {
+    document.querySelector("#trainer4").style.opacity = 0.6;
+    document.querySelector("#trainer4").parentNode.style.filter = "blur(2px)";
+    checkOpacity();
+  });
+
+  trainerDes4.addEventListener("mouseout", e => {
+    document.querySelector("#trainer4").style.opacity = 0;
+    document.querySelector("#trainer4").parentNode.style.filter = "blur(0px)";
     checkOpacity();
   });
 }
-
-for (let i = 0; i < trainer.length; i++) {
-  trainer[i].addEventListener("mouseout", e => {
-    e.target.style.opacity = 0;
-    e.target.parentNode.style.filter = "blur(0px)";
-    checkOpacity();
-  });
-}
-
-//Enable on/off when user over the description text
-const trainerDes1 = document.querySelector(".section-trainers__description-1");
-const trainerDes2 = document.querySelector(".section-trainers__description-2");
-const trainerDes3 = document.querySelector(".section-trainers__description-3");
-const trainerDes4 = document.querySelector(".section-trainers__description-4");
-
-//description1
-trainerDes1.addEventListener("mouseover", () => {
-  document.querySelector("#trainer1").style.opacity = 0.6;
-  document.querySelector("#trainer1").parentNode.style.filter = "blur(2px)";
-  checkOpacity();
-});
-
-trainerDes1.addEventListener("mouseout", e => {
-  document.querySelector("#trainer1").style.opacity = 0;
-  document.querySelector("#trainer1").parentNode.style.filter = "blur(0px)";
-  checkOpacity();
-});
-//description2
-trainerDes2.addEventListener("mouseover", () => {
-  document.querySelector("#trainer2").style.opacity = 0.6;
-  document.querySelector("#trainer2").parentNode.style.filter = "blur(2px)";
-  checkOpacity();
-});
-
-trainerDes2.addEventListener("mouseout", e => {
-  document.querySelector("#trainer2").style.opacity = 0;
-  document.querySelector("#trainer2").parentNode.style.filter = "blur(0px)";
-  checkOpacity();
-});
-//description3
-trainerDes3.addEventListener("mouseover", () => {
-  document.querySelector("#trainer3").style.opacity = 0.6;
-  document.querySelector("#trainer3").parentNode.style.filter = "blur(2px)";
-  checkOpacity();
-});
-
-trainerDes3.addEventListener("mouseout", e => {
-  document.querySelector("#trainer3").style.opacity = 0;
-  document.querySelector("#trainer3").parentNode.style.filter = "blur(0px)";
-  checkOpacity();
-});
-//description4
-trainerDes4.addEventListener("mouseover", () => {
-  document.querySelector("#trainer4").style.opacity = 0.6;
-  document.querySelector("#trainer4").parentNode.style.filter = "blur(2px)";
-  checkOpacity();
-});
-
-trainerDes4.addEventListener("mouseout", e => {
-  document.querySelector("#trainer4").style.opacity = 0;
-  document.querySelector("#trainer4").parentNode.style.filter = "blur(0px)";
-  checkOpacity();
-});
 
 //remove new line if screen is narrow in heading section home
 const replaceHeadHome = () => {
   const headHome = document.querySelector("#home-header");
   if (window.innerWidth < 800) {
     headHome.innerHTML = "BUILD YOUR BODY";
-    console.log("this is resized and header have NO break line");
+    document.querySelector("#homeLink").style.display = "block";
   } else {
     headHome.innerHTML = "BUILD <br />YOUR BODY";
-    console.log("this is resized and header have a break line");
+
+    document.querySelector("#homeLink").style.display = "none";
   }
 };
+replaceHeadHome();
 window.addEventListener("resize", replaceHeadHome);
 
 //MENU on mobile devices (phone and tablet)
@@ -685,4 +710,46 @@ window.addEventListener("resize", () => {
     document.querySelector(".section-home__menu").removeAttribute("style");
   }
 });
-//show content on click menu button
+
+//swap the price logo to a mobile version
+
+const togglePriceLogo = () => {
+  let headingPrice = document.querySelector(".section-price__heading");
+  if (window.innerWidth > 800) {
+    headingPrice.src = headerPrice;
+  } else if (window.innerWidth < 800) {
+    headingPrice.src = headerPriceMobile;
+  }
+};
+togglePriceLogo();
+window.addEventListener("resize", togglePriceLogo);
+
+//toggle price cards content - ul has only one item on mobile and more on tablet and desktop
+const makeOneItemList = () => {
+  const boxes = document.querySelectorAll(".section-price__box > ul");
+  boxes[0].innerHTML = "<li>No time limit</li>";
+  boxes[1].innerHTML = "<li>Access to all facilities</li>";
+  boxes[2].innerHTML = "<li>All classes free</li>";
+  boxes[3].innerHTML = "<li>Personal Plan</li>";
+};
+
+const makeMultiItemList = () => {
+  const boxes = document.querySelectorAll(".section-price__box > ul");
+  boxes[0].innerHTML = "<li>No time limit</li>";
+  boxes[1].innerHTML =
+    "<li>No time limit</li><li>Access to all facilities</li>";
+  boxes[2].innerHTML =
+    "<li>No time limit</li><li>Access to all facilities</li><li>All classes free</li>";
+  boxes[3].innerHTML =
+    "<li>No time limit</li><li>Access to all facilities</li><li>All classes free</li><li>Personal Plan</li>";
+};
+
+const togglePriceCards = () => {
+  if (window.innerWidth > 800) {
+    makeMultiItemList();
+  } else if (window.innerWidth < 800) {
+    makeOneItemList();
+  }
+};
+togglePriceCards();
+window.addEventListener("resize", togglePriceCards);

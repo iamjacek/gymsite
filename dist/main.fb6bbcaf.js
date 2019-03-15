@@ -200,7 +200,16 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../assets/ellipse-grey_about.png":[["ellipse-grey_about.18b53ff2.png","assets/ellipse-grey_about.png"],"assets/ellipse-grey_about.png"],"./../assets/ellipse-orange_about.png":[["ellipse-orange_about.9bc21254.png","assets/ellipse-orange_about.png"],"assets/ellipse-orange_about.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/logo_home.png":[function(require,module,exports) {
+},{"./../assets/ellipse-grey_about.png":[["ellipse-grey_about.18b53ff2.png","assets/ellipse-grey_about.png"],"assets/ellipse-grey_about.png"],"./../assets/ellipse-orange_about.png":[["ellipse-orange_about.9bc21254.png","assets/ellipse-orange_about.png"],"assets/ellipse-orange_about.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"sass/mediaqueries.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/heading_price-mobile.png":[function(require,module,exports) {
+module.exports = "/heading_price-mobile.d5ac7609.png";
+},{}],"assets/heading_price.png":[function(require,module,exports) {
+module.exports = "/heading_price.4725d3c1.png";
+},{}],"assets/logo_home.png":[function(require,module,exports) {
 module.exports = "/logo_home.07ed628a.png";
 },{}],"assets/star_home.svg":[function(require,module,exports) {
 module.exports = "/star_home.b575be31.svg";
@@ -210,6 +219,8 @@ module.exports = "/man_home.0c6dc632.png";
 module.exports = "/chevron_home.56ec1954.svg";
 },{}],"assets/heading_about.png":[function(require,module,exports) {
 module.exports = "/heading_about.11a8b692.png";
+},{}],"assets/heading-about-mobile.png":[function(require,module,exports) {
+module.exports = "/heading-about-mobile.a5c957d0.png";
 },{}],"assets/fonts/Pavanam.ttf":[function(require,module,exports) {
 module.exports = "/Pavanam.7f676f72.ttf";
 },{}],"assets/fonts/PaytoneOne.ttf":[function(require,module,exports) {
@@ -282,6 +293,12 @@ var _scroll = _interopRequireDefault(require("../sass/scroll.scss"));
 
 var _wheel = _interopRequireDefault(require("../sass/wheel.scss"));
 
+var _mediaqueries = _interopRequireDefault(require("../sass/mediaqueries.scss"));
+
+var _heading_priceMobile = _interopRequireDefault(require("../assets/heading_price-mobile.png"));
+
+var _heading_price = _interopRequireDefault(require("../assets/heading_price.png"));
+
 var _logo_home = _interopRequireDefault(require("../assets/logo_home.png"));
 
 var _star_home = _interopRequireDefault(require("../assets/star_home.svg"));
@@ -291,6 +308,8 @@ var _man_home = _interopRequireDefault(require("../assets/man_home.png"));
 var _chevron_home = _interopRequireDefault(require("../assets/chevron_home.svg"));
 
 var _heading_about = _interopRequireDefault(require("../assets/heading_about.png"));
+
+var _headingAboutMobile = _interopRequireDefault(require("../assets/heading-about-mobile.png"));
 
 var _Pavanam = _interopRequireDefault(require("../assets/fonts/Pavanam.ttf"));
 
@@ -377,11 +396,21 @@ alink.appendChild(scrollHomePageInd3); // images ABOUT SEC
 
 var secAbout = document.getElementsByClassName("section-about");
 var imgHead = document.createElement("img");
-imgHead.src = _heading_about.default;
+
+var replaceImage = function replaceImage() {
+  if (window.innerWidth < 800) {
+    imgHead.src = _headingAboutMobile.default;
+  } else {
+    imgHead.src = _heading_about.default;
+  }
+};
+
+window.addEventListener("resize", replaceImage);
+replaceImage();
 imgHead.alt = "heading picture";
 imgHead.className = "section-about__heading"; //text content for about sec
 
-var parCont = document.createElement("p");
+var parCont = document.createElement("div");
 parCont.className = "section-about__container";
 var par = document.createElement("p");
 par.innerHTML = '"What? Do you not know that your body is the temple of the Holy Spirit, who is in you, whom you have received from God, and that you are not your own? You were bought with a price. Therefore glorify God in your body and in your spirit, which are God\'s." ';
@@ -724,117 +753,123 @@ window.addEventListener("scroll", function () {
 slideEffect(); //trainers onmouseover effect
 //check opacity on overlay and hide/show description
 
-var checkOpacity = function checkOpacity() {
-  var a = document.querySelector("#trainer1");
-  var b = document.querySelector("#trainer2");
-  var c = document.querySelector("#trainer3");
-  var d = document.querySelector("#trainer4");
+if (window.innerWidth > 800) {
+  (function () {
+    var checkOpacity = function checkOpacity() {
+      var a = document.querySelector("#trainer1");
+      var b = document.querySelector("#trainer2");
+      var c = document.querySelector("#trainer3");
+      var d = document.querySelector("#trainer4");
 
-  if (a.style.opacity === "0.6") {
-    document.querySelector(".section-trainers__description-1").style.opacity = "1";
-  } else if (a.style.opacity === "0") {
-    document.querySelector(".section-trainers__description-1").style.opacity = "0";
-  }
+      if (a.style.opacity === "0.6") {
+        document.querySelector(".section-trainers__description-1").style.opacity = "1";
+      } else if (a.style.opacity === "0") {
+        document.querySelector(".section-trainers__description-1").style.opacity = "0";
+      }
 
-  if (b.style.opacity === "0.6") {
-    document.querySelector(".section-trainers__description-2").style.opacity = "1";
-  } else if (b.style.opacity === "0") {
-    document.querySelector(".section-trainers__description-2").style.opacity = "0";
-  }
+      if (b.style.opacity === "0.6") {
+        document.querySelector(".section-trainers__description-2").style.opacity = "1";
+      } else if (b.style.opacity === "0") {
+        document.querySelector(".section-trainers__description-2").style.opacity = "0";
+      }
 
-  if (c.style.opacity === "0.6") {
-    document.querySelector(".section-trainers__description-3").style.opacity = "1";
-  } else if (c.style.opacity === "0") {
-    document.querySelector(".section-trainers__description-3").style.opacity = "0";
-  }
+      if (c.style.opacity === "0.6") {
+        document.querySelector(".section-trainers__description-3").style.opacity = "1";
+      } else if (c.style.opacity === "0") {
+        document.querySelector(".section-trainers__description-3").style.opacity = "0";
+      }
 
-  if (d.style.opacity === "0.6") {
-    document.querySelector(".section-trainers__description-4").style.opacity = "1";
-  } else if (d.style.opacity === "0") {
-    document.querySelector(".section-trainers__description-4").style.opacity = "0";
-  }
-};
+      if (d.style.opacity === "0.6") {
+        document.querySelector(".section-trainers__description-4").style.opacity = "1";
+      } else if (d.style.opacity === "0") {
+        document.querySelector(".section-trainers__description-4").style.opacity = "0";
+      }
+    };
 
-var trainer = document.querySelectorAll(".section-trainers__trainer");
+    var trainer = document.querySelectorAll(".section-trainers__trainer");
 
-for (var _i = 0; _i < trainer.length; _i++) {
-  trainer[_i].addEventListener("mouseover", function (e) {
-    e.target.style.opacity = 0.6;
-    e.target.parentNode.style.filter = "blur(2px)";
-    checkOpacity();
-  });
-}
+    for (var _i = 0; _i < trainer.length; _i++) {
+      trainer[_i].addEventListener("mouseover", function (e) {
+        e.target.style.opacity = 0.6;
+        e.target.parentNode.style.filter = "blur(2px)";
+        checkOpacity();
+      });
+    }
 
-for (var _i2 = 0; _i2 < trainer.length; _i2++) {
-  trainer[_i2].addEventListener("mouseout", function (e) {
-    e.target.style.opacity = 0;
-    e.target.parentNode.style.filter = "blur(0px)";
-    checkOpacity();
-  });
-} //Enable on/off when user over the description text
+    for (var _i2 = 0; _i2 < trainer.length; _i2++) {
+      trainer[_i2].addEventListener("mouseout", function (e) {
+        e.target.style.opacity = 0;
+        e.target.parentNode.style.filter = "blur(0px)";
+        checkOpacity();
+      });
+    } //Enable on/off when user over the description text
 
 
-var trainerDes1 = document.querySelector(".section-trainers__description-1");
-var trainerDes2 = document.querySelector(".section-trainers__description-2");
-var trainerDes3 = document.querySelector(".section-trainers__description-3");
-var trainerDes4 = document.querySelector(".section-trainers__description-4"); //description1
+    var trainerDes1 = document.querySelector(".section-trainers__description-1");
+    var trainerDes2 = document.querySelector(".section-trainers__description-2");
+    var trainerDes3 = document.querySelector(".section-trainers__description-3");
+    var trainerDes4 = document.querySelector(".section-trainers__description-4"); //description1
 
-trainerDes1.addEventListener("mouseover", function () {
-  document.querySelector("#trainer1").style.opacity = 0.6;
-  document.querySelector("#trainer1").parentNode.style.filter = "blur(2px)";
-  checkOpacity();
-});
-trainerDes1.addEventListener("mouseout", function (e) {
-  document.querySelector("#trainer1").style.opacity = 0;
-  document.querySelector("#trainer1").parentNode.style.filter = "blur(0px)";
-  checkOpacity();
-}); //description2
+    trainerDes1.addEventListener("mouseover", function () {
+      document.querySelector("#trainer1").style.opacity = 0.6;
+      document.querySelector("#trainer1").parentNode.style.filter = "blur(2px)";
+      checkOpacity();
+    });
+    trainerDes1.addEventListener("mouseout", function (e) {
+      document.querySelector("#trainer1").style.opacity = 0;
+      document.querySelector("#trainer1").parentNode.style.filter = "blur(0px)";
+      checkOpacity();
+    }); //description2
 
-trainerDes2.addEventListener("mouseover", function () {
-  document.querySelector("#trainer2").style.opacity = 0.6;
-  document.querySelector("#trainer2").parentNode.style.filter = "blur(2px)";
-  checkOpacity();
-});
-trainerDes2.addEventListener("mouseout", function (e) {
-  document.querySelector("#trainer2").style.opacity = 0;
-  document.querySelector("#trainer2").parentNode.style.filter = "blur(0px)";
-  checkOpacity();
-}); //description3
+    trainerDes2.addEventListener("mouseover", function () {
+      document.querySelector("#trainer2").style.opacity = 0.6;
+      document.querySelector("#trainer2").parentNode.style.filter = "blur(2px)";
+      checkOpacity();
+    });
+    trainerDes2.addEventListener("mouseout", function (e) {
+      document.querySelector("#trainer2").style.opacity = 0;
+      document.querySelector("#trainer2").parentNode.style.filter = "blur(0px)";
+      checkOpacity();
+    }); //description3
 
-trainerDes3.addEventListener("mouseover", function () {
-  document.querySelector("#trainer3").style.opacity = 0.6;
-  document.querySelector("#trainer3").parentNode.style.filter = "blur(2px)";
-  checkOpacity();
-});
-trainerDes3.addEventListener("mouseout", function (e) {
-  document.querySelector("#trainer3").style.opacity = 0;
-  document.querySelector("#trainer3").parentNode.style.filter = "blur(0px)";
-  checkOpacity();
-}); //description4
+    trainerDes3.addEventListener("mouseover", function () {
+      document.querySelector("#trainer3").style.opacity = 0.6;
+      document.querySelector("#trainer3").parentNode.style.filter = "blur(2px)";
+      checkOpacity();
+    });
+    trainerDes3.addEventListener("mouseout", function (e) {
+      document.querySelector("#trainer3").style.opacity = 0;
+      document.querySelector("#trainer3").parentNode.style.filter = "blur(0px)";
+      checkOpacity();
+    }); //description4
 
-trainerDes4.addEventListener("mouseover", function () {
-  document.querySelector("#trainer4").style.opacity = 0.6;
-  document.querySelector("#trainer4").parentNode.style.filter = "blur(2px)";
-  checkOpacity();
-});
-trainerDes4.addEventListener("mouseout", function (e) {
-  document.querySelector("#trainer4").style.opacity = 0;
-  document.querySelector("#trainer4").parentNode.style.filter = "blur(0px)";
-  checkOpacity();
-}); //remove new line if screen is narrow in heading section home
+    trainerDes4.addEventListener("mouseover", function () {
+      document.querySelector("#trainer4").style.opacity = 0.6;
+      document.querySelector("#trainer4").parentNode.style.filter = "blur(2px)";
+      checkOpacity();
+    });
+    trainerDes4.addEventListener("mouseout", function (e) {
+      document.querySelector("#trainer4").style.opacity = 0;
+      document.querySelector("#trainer4").parentNode.style.filter = "blur(0px)";
+      checkOpacity();
+    });
+  })();
+} //remove new line if screen is narrow in heading section home
+
 
 var replaceHeadHome = function replaceHeadHome() {
   var headHome = document.querySelector("#home-header");
 
   if (window.innerWidth < 800) {
     headHome.innerHTML = "BUILD YOUR BODY";
-    console.log("this is resized and header have NO break line");
+    document.querySelector("#homeLink").style.display = "block";
   } else {
     headHome.innerHTML = "BUILD <br />YOUR BODY";
-    console.log("this is resized and header have a break line");
+    document.querySelector("#homeLink").style.display = "none";
   }
 };
 
+replaceHeadHome();
 window.addEventListener("resize", replaceHeadHome); //MENU on mobile devices (phone and tablet)
 
 function toggleMenu() {
@@ -864,8 +899,48 @@ window.addEventListener("resize", function () {
   if (window.innerWidth > 800) {
     document.querySelector(".section-home__menu").removeAttribute("style");
   }
-}); //show content on click menu button
-},{"../sass/style.scss":"sass/style.scss","../sass/menu.scss":"sass/menu.scss","../sass/button.scss":"sass/button.scss","../sass/scroll.scss":"sass/scroll.scss","../sass/wheel.scss":"sass/wheel.scss","../assets/logo_home.png":"assets/logo_home.png","../assets/star_home.svg":"assets/star_home.svg","../assets/man_home.png":"assets/man_home.png","../assets/chevron_home.svg":"assets/chevron_home.svg","../assets/heading_about.png":"assets/heading_about.png","../assets/fonts/Pavanam.ttf":"assets/fonts/Pavanam.ttf","../assets/fonts/PaytoneOne.ttf":"assets/fonts/PaytoneOne.ttf","../assets/fonts/post.ttf":"assets/fonts/post.ttf","../assets/fonts/PatuaOne.ttf":"assets/fonts/PatuaOne.ttf","../assets/ellipse-grey_about.png":"assets/ellipse-grey_about.png","../assets/ellipse-orange_about.png":"assets/ellipse-orange_about.png","os":"../node_modules/os-browserify/browser.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+}); //swap the price logo to a mobile version
+
+var togglePriceLogo = function togglePriceLogo() {
+  var headingPrice = document.querySelector(".section-price__heading");
+
+  if (window.innerWidth > 800) {
+    headingPrice.src = _heading_price.default;
+  } else if (window.innerWidth < 800) {
+    headingPrice.src = _heading_priceMobile.default;
+  }
+};
+
+togglePriceLogo();
+window.addEventListener("resize", togglePriceLogo); //toggle price cards content - ul has only one item on mobile and more on tablet and desktop
+
+var makeOneItemList = function makeOneItemList() {
+  var boxes = document.querySelectorAll(".section-price__box > ul");
+  boxes[0].innerHTML = "<li>No time limit</li>";
+  boxes[1].innerHTML = "<li>Access to all facilities</li>";
+  boxes[2].innerHTML = "<li>All classes free</li>";
+  boxes[3].innerHTML = "<li>Personal Plan</li>";
+};
+
+var makeMultiItemList = function makeMultiItemList() {
+  var boxes = document.querySelectorAll(".section-price__box > ul");
+  boxes[0].innerHTML = "<li>No time limit</li>";
+  boxes[1].innerHTML = "<li>No time limit</li><li>Access to all facilities</li>";
+  boxes[2].innerHTML = "<li>No time limit</li><li>Access to all facilities</li><li>All classes free</li>";
+  boxes[3].innerHTML = "<li>No time limit</li><li>Access to all facilities</li><li>All classes free</li><li>Personal Plan</li>";
+};
+
+var togglePriceCards = function togglePriceCards() {
+  if (window.innerWidth > 800) {
+    makeMultiItemList();
+  } else if (window.innerWidth < 800) {
+    makeOneItemList();
+  }
+};
+
+togglePriceCards();
+window.addEventListener("resize", togglePriceCards);
+},{"../sass/style.scss":"sass/style.scss","../sass/menu.scss":"sass/menu.scss","../sass/button.scss":"sass/button.scss","../sass/scroll.scss":"sass/scroll.scss","../sass/wheel.scss":"sass/wheel.scss","../sass/mediaqueries.scss":"sass/mediaqueries.scss","../assets/heading_price-mobile.png":"assets/heading_price-mobile.png","../assets/heading_price.png":"assets/heading_price.png","../assets/logo_home.png":"assets/logo_home.png","../assets/star_home.svg":"assets/star_home.svg","../assets/man_home.png":"assets/man_home.png","../assets/chevron_home.svg":"assets/chevron_home.svg","../assets/heading_about.png":"assets/heading_about.png","../assets/heading-about-mobile.png":"assets/heading-about-mobile.png","../assets/fonts/Pavanam.ttf":"assets/fonts/Pavanam.ttf","../assets/fonts/PaytoneOne.ttf":"assets/fonts/PaytoneOne.ttf","../assets/fonts/post.ttf":"assets/fonts/post.ttf","../assets/fonts/PatuaOne.ttf":"assets/fonts/PatuaOne.ttf","../assets/ellipse-grey_about.png":"assets/ellipse-grey_about.png","../assets/ellipse-orange_about.png":"assets/ellipse-orange_about.png","os":"../node_modules/os-browserify/browser.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -892,7 +967,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50958" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62431" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
