@@ -711,6 +711,21 @@ window.addEventListener("resize", () => {
   }
 });
 
+//hide ham-menu when clicked on mobile
+
+if (window.innerWidth < 800) {
+  const hideWhenClick = () => {
+    const a = document.querySelectorAll(".section-home__menu > a");
+    a.forEach(element => {
+      element.addEventListener("click", () => {
+        document.querySelector(".section-home__hamburger-menu").click();
+      });
+    });
+  };
+
+  hideWhenClick();
+}
+
 //swap the price logo to a mobile version
 
 const togglePriceLogo = () => {

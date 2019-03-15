@@ -899,7 +899,21 @@ window.addEventListener("resize", function () {
   if (window.innerWidth > 800) {
     document.querySelector(".section-home__menu").removeAttribute("style");
   }
-}); //swap the price logo to a mobile version
+}); //hide ham-menu when clicked on mobile
+
+if (window.innerWidth < 800) {
+  var hideWhenClick = function hideWhenClick() {
+    var a = document.querySelectorAll(".section-home__menu > a");
+    a.forEach(function (element) {
+      element.addEventListener("click", function () {
+        document.querySelector(".section-home__hamburger-menu").click();
+      });
+    });
+  };
+
+  hideWhenClick();
+} //swap the price logo to a mobile version
+
 
 var togglePriceLogo = function togglePriceLogo() {
   var headingPrice = document.querySelector(".section-price__heading");
@@ -967,7 +981,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62431" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59646" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
