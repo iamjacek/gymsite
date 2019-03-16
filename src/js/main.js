@@ -533,6 +533,9 @@ const slideEffect = () => {
 
     const elem2 = document.querySelector(".section-contacts__content p");
     elem2.style.transform = "translatex(0)";
+
+    document.querySelector(".section-contacts__content").style.overflow =
+      "visible";
   }
 };
 window.addEventListener("scroll", () => {
@@ -768,3 +771,5 @@ const togglePriceCards = () => {
 };
 togglePriceCards();
 window.addEventListener("resize", togglePriceCards);
+
+//change the overflow to contact content to show full map and prevent, when map is sliding in to, show horizontal scroll bars

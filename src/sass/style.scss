@@ -583,7 +583,7 @@ body {
 }
 .section-contacts {
   background: $color-4;
-
+  z-index: 1;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
