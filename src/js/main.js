@@ -133,7 +133,7 @@ const secAbout = document.getElementsByClassName("section-about");
 const imgHead = document.createElement("img");
 
 const replaceImage = () => {
-  if (window.innerWidth < 800) {
+  if (window.innerWidth < 768) {
     imgHead.src = headingAbout2;
   } else {
     imgHead.src = headingAbout;
@@ -544,7 +544,7 @@ slideEffect();
 //trainers onmouseover effect
 
 //check opacity on overlay and hide/show description
-if (window.innerWidth > 800) {
+if (window.innerWidth > 767) {
   const checkOpacity = () => {
     const a = document.querySelector("#trainer1");
     const b = document.querySelector("#trainer2");
@@ -666,10 +666,10 @@ if (window.innerWidth > 800) {
   });
 }
 
-//remove new line if screen is narrow in heading section home
+//remove new line only if screen is narrow - in heading section home
 const replaceHeadHome = () => {
   const headHome = document.querySelector("#home-header");
-  if (window.innerWidth < 800) {
+  if (window.innerWidth < 767) {
     headHome.innerHTML = "BUILD YOUR BODY";
     document.querySelector("#homeLink").style.display = "block";
   } else {
@@ -706,14 +706,14 @@ function toggleMenuLinks() {
   }
 }
 window.addEventListener("resize", () => {
-  if (window.innerWidth > 800) {
+  if (window.innerWidth > 767) {
     document.querySelector(".section-home__menu").removeAttribute("style");
   }
 });
 
 //hide ham-menu when clicked on mobile
 
-if (window.innerWidth < 800) {
+if (window.innerWidth < 767) {
   const hideWhenClick = () => {
     const a = document.querySelectorAll(".section-home__menu > a");
     a.forEach(element => {
@@ -730,9 +730,9 @@ if (window.innerWidth < 800) {
 
 const togglePriceLogo = () => {
   let headingPrice = document.querySelector(".section-price__heading");
-  if (window.innerWidth > 800) {
+  if (window.innerWidth > 767) {
     headingPrice.src = headerPrice;
-  } else if (window.innerWidth < 800) {
+  } else if (window.innerWidth < 767) {
     headingPrice.src = headerPriceMobile;
   }
 };
@@ -760,9 +760,9 @@ const makeMultiItemList = () => {
 };
 
 const togglePriceCards = () => {
-  if (window.innerWidth > 800) {
+  if (window.innerWidth > 767) {
     makeMultiItemList();
-  } else if (window.innerWidth < 800) {
+  } else if (window.innerWidth < 767) {
     makeOneItemList();
   }
 };

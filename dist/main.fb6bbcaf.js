@@ -398,7 +398,7 @@ var secAbout = document.getElementsByClassName("section-about");
 var imgHead = document.createElement("img");
 
 var replaceImage = function replaceImage() {
-  if (window.innerWidth < 800) {
+  if (window.innerWidth < 768) {
     imgHead.src = _headingAboutMobile.default;
   } else {
     imgHead.src = _heading_about.default;
@@ -753,7 +753,7 @@ window.addEventListener("scroll", function () {
 slideEffect(); //trainers onmouseover effect
 //check opacity on overlay and hide/show description
 
-if (window.innerWidth > 800) {
+if (window.innerWidth > 767) {
   (function () {
     var checkOpacity = function checkOpacity() {
       var a = document.querySelector("#trainer1");
@@ -854,13 +854,13 @@ if (window.innerWidth > 800) {
       checkOpacity();
     });
   })();
-} //remove new line if screen is narrow in heading section home
+} //remove new line only if screen is narrow - in heading section home
 
 
 var replaceHeadHome = function replaceHeadHome() {
   var headHome = document.querySelector("#home-header");
 
-  if (window.innerWidth < 800) {
+  if (window.innerWidth < 767) {
     headHome.innerHTML = "BUILD YOUR BODY";
     document.querySelector("#homeLink").style.display = "block";
   } else {
@@ -896,12 +896,12 @@ function toggleMenuLinks() {
 }
 
 window.addEventListener("resize", function () {
-  if (window.innerWidth > 800) {
+  if (window.innerWidth > 767) {
     document.querySelector(".section-home__menu").removeAttribute("style");
   }
 }); //hide ham-menu when clicked on mobile
 
-if (window.innerWidth < 800) {
+if (window.innerWidth < 767) {
   var hideWhenClick = function hideWhenClick() {
     var a = document.querySelectorAll(".section-home__menu > a");
     a.forEach(function (element) {
@@ -918,9 +918,9 @@ if (window.innerWidth < 800) {
 var togglePriceLogo = function togglePriceLogo() {
   var headingPrice = document.querySelector(".section-price__heading");
 
-  if (window.innerWidth > 800) {
+  if (window.innerWidth > 767) {
     headingPrice.src = _heading_price.default;
-  } else if (window.innerWidth < 800) {
+  } else if (window.innerWidth < 767) {
     headingPrice.src = _heading_priceMobile.default;
   }
 };
@@ -945,9 +945,9 @@ var makeMultiItemList = function makeMultiItemList() {
 };
 
 var togglePriceCards = function togglePriceCards() {
-  if (window.innerWidth > 800) {
+  if (window.innerWidth > 767) {
     makeMultiItemList();
-  } else if (window.innerWidth < 800) {
+  } else if (window.innerWidth < 767) {
     makeOneItemList();
   }
 };
@@ -981,7 +981,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59646" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58290" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
