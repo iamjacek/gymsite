@@ -1,18 +1,23 @@
 # 🙋‍♂️ Gymsite
 
-## 🚀 What's in the page?
+This is website made for learning purpose.
+Gym is a target customer.
+
+## 🚀 What do I use in here?
 
 1. Parcel
-
 2. Sass
-
 3. BEM
 
-### All graphics and ideas designed and developed by Jacek Witucki
+### Design and develpment
+I made design and coding part by myself.
+Check more of my work on my dribbble <https://dribbble.com/iamjacek>
 
-<p align="center">
-Check me on:
-  <a href="https://www.jacekwitucki.com">
-    <img alt="JW" src="https://www.jacekwitucki.com/static/Logo-24967c1bccb93551d5e2ff0af21acea8.png" width="60" />
-  </a>
-</p>
+### How to install locally
+1. Clone this repo
+2. To start server type in CLI: npm run dev
+3. To make a build type: npm run build
+
+### Online acces:
+This has been deployed online:
+<https://iamjacek.github.io/>
